@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +12,52 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+a {
+	text-decoration: none;
+
+	color: inherit;
+}
+
+:root {
+	/* font-weight */
+	--fw-lighter: 100;
+	--fw-light: 300;
+	--fw-regular: 400;
+	--fw-medium: 500;
+	--fw-bold: 700;
+
+	/* font-size */
+	--fs-xxs: 12px;
+	--fs-xs: 14px;
+	--fs-s: 16px;
+	--fs-m: 18px;
+	--fs-l: 20px;
+	--fs-xxl: 22px;
+	--fs-xxxl: 36px;
+
+	/* base-transition */
+	--transition: 0.2;
+
+	/* font-family */
+	--ff-noto-sans: 'Montserrat', sans-serif;;
+  
+  /* font-family */
+
+  --accent: #000000;
+  --secondary: #F188F2;
+  --secondary-light: #FFEDFF;
+  --secondary-bold: #C949CA;
+  --white: #FFFFFF;
+
+  /* pink */
+	--color-pink-50: #FEF4FE;
+	--color-pink-100: #FCE7FC;
+	--color-pink-200: #F9CFFA;
+	--color-pink-300: #F7B8F7;
+	--color-pink-400: #F4A0F5;
+	--color-pink-500: #F188F2;
+	--color-pink-600: #B566B6;
+	--color-pink-700: #794497;
 }
