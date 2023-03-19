@@ -69,7 +69,7 @@ class TSXFileCreator(FileCreator):
 
     def _write_file_contents(self):
         self.get_absolute_filename().write_text(
-            f"""import styles from "./styles/{self._element.name}.module.css"
+            f"""import styles from "./styles/{self._element.name}.module.scss"
 interface {self._element.name}Props {{
   
 }}
@@ -81,9 +81,9 @@ export default {self._element.name}
 
 
 class CSSFileCreator(FileCreator):
-    """Element.module.css file creator"""
+    """Element.module.scss file creator"""
     def get_absolute_filename(self) -> Path:
-        return self._element.full_path / "styles" / (self._element.name + ".module.css")
+        return self._element.full_path / "styles" / (self._element.name + ".module.scss")
 
     def _write_file_contents(self):
         pass
