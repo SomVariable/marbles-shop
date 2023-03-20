@@ -1,3 +1,3 @@
-export const ConstantsReducers = {
+export const ExampleConstants = {
     
 }
