@@ -1,3 +1,7 @@
+@import 'index.scss';
+
 .button{
-    display: block;
+    border-radius: 12px;
+    background-color: var(--secondary-bold);
+    color: #FFFFFF;
 }
