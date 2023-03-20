@@ -1,0 +1,46 @@
+.sale {
+  padding: 130px 0 139px 50px;
+  background: url('./background.png') center center / cover no-repeat;
+}
+.main__title {
+  font-weight: var(--fw-bold);
+  font-size: var( --fs-80);
+  color: var( --white);
+  margin: 0px;
+}
+.main__subtitle {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-63);
+  color: var( --white);
+  margin: 0px;
+}
+.wrap__button {
+  width: 516px;
+  height: 82px;
+}
+.wrap__button {
+  margin-top: 60px;
+}
+.stock {
+  width: 241px;
+  height: 82px;
+  margin-right: 40px;
+  background: var(--white);
+  border-radius: 13px;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-25);
+  color: #2D2D2D;
+  cursor: pointer;
+  border: none;
+}
+.more {
+  width: 235px;
+  height: 82px;
+  border: 2px solid var(--white);
+  border-radius: 13px;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-25);
+  color: var(--white);
+  background-color: transparent;
+  cursor: pointer;
+}
