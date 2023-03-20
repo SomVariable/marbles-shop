@@ -3,6 +3,7 @@ interface ExampleProps {
   
 }
 const Example = ({}: ExampleProps) => (
-  <div>Example</div>
+  <div>Example 2</div>
+
 )
 export default Example
