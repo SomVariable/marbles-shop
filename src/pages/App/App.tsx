@@ -6,8 +6,6 @@ import { IAppProps } from './IApp.interfase';
 
 function App({...props}: IAppProps): JSX.Element {
   return <div className="App"> 
-      <Module />
-      <Module2 />
     </div>;
 }
 
