@@ -1,8 +1,19 @@
 import React from 'react'
+import styles from './Button.module.scss'
+import cn from 'classnames'
 
-function Button() {
+export interface IButtonProps extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+  appearance: "primary" | "secondary";
+}
+
+function Button({appearance, className, children}: IButtonProps) : JSX.Element{
   return (
-    <div>Button</div>
+    <button className = {cn(styles.button, className, {
+      [styles.primary]: appearance == 'primary',
+      [styles.secondary]: appearance == 'secondary',
+  })}>
+    {children}
+    </button>
   )
 }
 
