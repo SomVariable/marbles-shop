@@ -1,3 +1,3 @@
-export const ExampleConsts = {
-
+export const ExampleConstants = {
+    
 }

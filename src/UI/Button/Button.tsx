@@ -3,7 +3,7 @@ import styles from './Button.module.scss'
 import cn from 'classnames'
 
 export interface IButtonProps extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
-  appearance: "primary" | "secondary";
+  appearance: "primary" | "secondary" | "option" | "shadow";
   isOption?: boolean
 }
 
@@ -12,13 +12,15 @@ function Button({appearance, isOption = false, className, children}: IButtonProp
     <button className = {cn(styles.button, className, {
       [styles.primary]: appearance == 'primary',
       [styles.secondary]: appearance == 'secondary',
+      [styles.option]: appearance == 'option',
+      [styles.shadow]: appearance == 'shadow',
   })}>
-    {isOption ||<svg width="20" height="20" viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg">
+    {!isOption ||<svg className = {styles.optionFrame} width="35" height="35" viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg">
         <rect x="5" y="7" width="11" height="2" rx="1" />
-        <rect x="9" y="11" width="7" height="2" rx="1"/>
+        <rect x="5" y="11" width="7" height="2" rx="1"/>
         </svg>
         }
-    {children}
+    <p className = {styles.text}>{children}</p>
     </button>
   )
 }
