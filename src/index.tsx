@@ -4,6 +4,7 @@ import './index.scss';
 import Checkbox from './UI/checkbox/Checkbox';
 import SaleSection from './components/saleSection/SaleSection';
 import Header from './components/header/Header';
+import Title from './UI/title/Title';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -12,7 +13,12 @@ root.render(
   <>
   <Header/>
   <SaleSection/>
-  <Checkbox/>
+  <Checkbox>
+  Товары со скидкой
+  </Checkbox>
+  <Title>
+  Популярные категории
+  </Title>
   </>
 );
 
