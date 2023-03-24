@@ -5,6 +5,7 @@ import Checkbox from './UI/checkbox/Checkbox';
 import SaleSection from './components/saleSection/SaleSection';
 import Header from './components/header/Header';
 import Title from './UI/title/Title';
+import Input from './UI/input/Input';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -19,6 +20,7 @@ root.render(
   <Title>
   Популярные категории
   </Title>
+  <Input placeholder='Ваш номер телефона' className='some' type='text'/>
   </>
 );
 
