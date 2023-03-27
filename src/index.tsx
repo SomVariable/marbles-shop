@@ -14,7 +14,7 @@ root.render(
   <>
   <Header/>
   <SaleSection/>
-  <Checkbox>
+  <Checkbox classNameInput='thfgh' classNameLabel='rgrg'>
   Товары со скидкой
   </Checkbox>
   <Title>
