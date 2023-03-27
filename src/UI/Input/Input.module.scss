@@ -4,8 +4,8 @@
 
 .field{
     width: 100%;
-    background: #FFFFFF;
-    border: 2px solid #A9A9A9;
+    background: var(--secondary);
+    border: 2px solid var(--color-grey);
     border-radius: 20px;
 
     padding: 25px;
@@ -31,7 +31,7 @@
     left: 10px;
    
     .searchIcon{
-        fill: #7B7B7B;
+        fill: --color-grey;
         width: 20px;
         height: 20px;
         cursor: text;

@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+*{
+	box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -60,4 +64,8 @@ a {
 	--color-pink-500: #F188F2;
 	--color-pink-600: #B566B6;
 	--color-pink-700: #794497;
+
+	// grey
+	
+	--color-grey: #A9A9A9;
 }
