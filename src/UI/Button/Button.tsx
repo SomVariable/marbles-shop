@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './Button.module.scss'
 import cn from 'classnames'
 
-export interface IButtonProps extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+export interface IButtonProps extends Pick<React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, "className" | "children"> {
   appearance: "primary" | "secondary" | "option" | "shadow";
   isOption?: boolean
 }

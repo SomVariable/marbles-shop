@@ -7,14 +7,18 @@ interface ExampleProps {
   
 }
 const ExampleComponent = ({}: ExampleProps) => {
-  const [numn, setNum] = useState("1");
+  const [numn, setNum] = useState("");
 
   const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setNum(e.target.value)
   }
   
   return <div>
-
+    <Button appearance="option" isOption = {true}>option</Button>
+    <div className={styles.primary}><Button appearance="primary">primary</Button></div>
+    <div className={styles.primary2}><Button appearance="primary">У всех что в блоках размер задается из родителя!</Button></div>
+    <div className={styles.secondary}><Button appearance="secondary">secondary</Button></div>
+    <div className={styles.shadow}><Button appearance="shadow">shadow</Button></div>
     <CustomIcon type="cart"/>
     <CustomIcon type="instagram"/>
     <CustomIcon type="search"/>
