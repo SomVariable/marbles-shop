@@ -1,0 +1,39 @@
+.input{
+    position: relative;
+}
+
+.field{
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 20px;
+
+    padding: 25px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 130%;
+    /* or 23px */
+
+    letter-spacing: 0.03em;
+}
+
+.search{
+    padding: 16px 36px; 
+
+}
+
+.lable{
+    position: absolute;
+    top: 30%;
+    left: 10px;
+   
+    .searchIcon{
+        fill: #7B7B7B;
+        width: 20px;
+        height: 20px;
+        cursor: text;
+    }
+}
