@@ -14,7 +14,7 @@ const ExampleComponent = ({}: ExampleProps) => {
   }
   
   return <div>
-    <Button appearance="option" isOption = {true}>option</Button>
+   {/*  <Button appearance="option" isOption = {true}>option</Button>
     <div className={styles.primary}><Button appearance="primary">primary</Button></div>
     <div className={styles.primary2}><Button appearance="primary">У всех что в блоках размер задается из родителя!</Button></div>
     <div className={styles.secondary}><Button appearance="secondary">secondary</Button></div>
@@ -29,8 +29,8 @@ const ExampleComponent = ({}: ExampleProps) => {
 
     <div className={styles.testInput}>
 
-      <Input value={numn} setValue = {inputHandler} placeholder = {"Ваш номер телефона"}/>
-    </div>
+      <Input value={numn} setValue = {inputHandler} placeholder = {"Ваш номер телефона"} />
+    </div> */}
     
   </div>
 

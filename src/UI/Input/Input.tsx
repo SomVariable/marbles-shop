@@ -3,7 +3,7 @@ import styles from './Input.module.scss'
 import cn from 'classnames'
 import CustomIcon from '../Icon/Icon'
 
-interface IInputProps extends Pick<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, "className" | "placeholder">{
+interface IInputProps extends Pick<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, "className" | "placeholder" >{
     value: string,
     isSearch?: boolean,
     setValue: (event:React.ChangeEvent<HTMLInputElement>) => void,
