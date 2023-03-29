@@ -1,0 +1,75 @@
+  @mixin flexParam ($dis, $jc, $ai) {
+    display: $dis;
+    justify-content: $jc;
+    align-items: $ai;
+  }
+  .sale {
+    min-height: 198px;
+    background: url('for320.png') center center / cover no-repeat;
+    padding: 36px 0px 36px 11px;
+  }
+  .mainTitle {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: var(--fw-bold);
+    font-size: 28px;
+    line-height: 130%;
+    color: var(--secondary);
+    margin: 0px;
+  }
+  .subTitle {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: var(--fw-bold);
+    font-size: var(	--fs-m);
+    line-height: 130%;
+    color: var(--secondary);
+  }
+  .primary {
+    width: 133px;
+    height: 41px;
+    background:  var(--secondary);
+    border-radius: 5px;
+    padding: 0px;
+    p {
+      @include flexParam(flex,center ,center );
+      font-weight: var(--fw-bold);
+      font-size: var(--fs-s);
+      line-height: 130%;
+      color: #2D2D2D;
+    }
+  }
+  .more {
+    display: none;
+  }
+
+ @media (min-width: 445px) {
+  .sale {
+    background: url('main.png') center center / cover no-repeat;
+  }
+ }
+ @media (min-width: 576px) {
+  .sale {
+    min-height: 250px;
+  }
+  .buttonWrap {
+    width: 300px;
+    @include flexParam(flex,space-between,center );
+  }
+  .more {
+    display: block;
+    width: 133px;
+    height: 41px;
+    border: 2px solid #FFFFFF;
+    border-radius: 13px;
+    background: transparent;
+    padding: 0px;
+    p {
+      @include flexParam(flex,center ,center );
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 130%;
+      color: white;
+    }
+  }
+ }

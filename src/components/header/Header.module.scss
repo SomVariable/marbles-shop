@@ -112,10 +112,11 @@ $parametrBorder: 1px solid #EEEEEE;
     transition: 0.5s all;
     visibility: hidden;
   }
+
   .menu.activeMenu {
     left: 0%;
     visibility: visible;
-    opacity: 1;
+    opacity: 1; 
   }
   .menuBlock {
    position: relative;

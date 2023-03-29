@@ -3,7 +3,7 @@ import { ChangeEvent } from 'react';
 import './Header.module.scss';
 import Button from '../../UI/Button/Button';
 import Input from '../../UI/Input/Input';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import headerStyle from './Header.module.scss';
 import cn from 'classnames';
 import Icon from '../../UI/Icon/Icon'
@@ -21,6 +21,22 @@ const Header = () => {
     {clazz: headerStyle.listItem, content: 'Галерея', id: 4},
     {clazz: headerStyle.listItem, content: 'Отзывы', id: 5},
   ]
+
+  useEffect(() => {
+   if (asidePanel) {
+    const res =  window.innerWidth - document.body.scrollWidth;
+    document.body.style.cssText = `
+    overflow: hidden;
+    padding-right: ${res}px;
+    `;
+   } else {
+    document.body.style.cssText = `
+    overflow: "";
+    padding-right: ${0}px; 
+    `
+   }
+  },[asidePanel])
+
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
      setValue(e.target.value);
   }
