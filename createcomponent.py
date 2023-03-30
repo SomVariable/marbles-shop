@@ -70,10 +70,10 @@ class TSXFileCreator(FileCreator):
     def _write_file_contents(self):
         self.get_absolute_filename().write_text(
             f"""import styles from "./styles/{self._element.name}.module.scss"
-interface {self._element.name}Props {{
+interface I{self._element.name}Props {{
   
 }}
-const {self._element.name} = ({{}}: {self._element.name}Props) => (
+const {self._element.name} = ({{}}: I{self._element.name}Props) => (
   <div>{self._element.name}</div>
 )
 export default {self._element.name}
@@ -94,7 +94,13 @@ class ReducerFileCreator(FileCreator):
         return self._element.full_path / "reducers" / (self._element.name + "reducers.tsx")
 
     def _write_file_contents(self):
-        pass
+        current_file_contents = self.get_absolute_filename().read_text()
+        if current_file_contents.strip():
+            return
+        self.get_absolute_filename().write_text(
+            f"""export const {self._element.name}Reducer = {{}}"""
+        )
+
 
 class ConstantsFileCreator(FileCreator):
     """Element.tsx file creator"""
@@ -102,7 +108,12 @@ class ConstantsFileCreator(FileCreator):
         return self._element.full_path / "constants" / (self._element.name + ".tsx")
 
     def _write_file_contents(self):
-        pass
+        current_file_contents = self.get_absolute_filename().read_text()
+        if current_file_contents.strip():
+            return
+        self.get_absolute_filename().write_text(
+            f"""export const {self._element.name}Consts = {{}}"""
+        )
 
 class IndexFileCreator(FileCreator):
     """Optional index.ts file creator"""
