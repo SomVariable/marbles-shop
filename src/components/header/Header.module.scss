@@ -1,6 +1,10 @@
 $parametrBorder: 1px solid #EEEEEE;
 $heightContent: 58px; 
 $transition: 0.5s all;
+@mixin fontParam($ff, $fs) {
+  font-family: $ff;
+  font-style: $fs;
+}
 @mixin flexParametrs ($display, $jc, $ai) {
   display: $display;
   justify-content: $jc;
@@ -33,13 +37,13 @@ $transition: 0.5s all;
     border-radius: 0;
     border: 0;
     @include borders($parametrBorder);
-      svg {
-        fill: var(--black);
-        rect {
-          height: 1px;
-        }
-        @include position(absolute, 50%);
-      }
+  }
+  svg {
+    fill: #787878;
+    rect {
+      height: 1px;
+    }
+    @include position(absolute, 50%);
   }
   svg:hover {
     background: #FEDDFF;
@@ -119,9 +123,14 @@ $transition: 0.5s all;
 .li:last-child {
   margin-bottom: 45px;
 }
+.listItem.activeLink {
+  @include fontParam('Montserrat',normal );
+  font-weight: var(--fw-medium);
+  font-size: 24px;
+  color: #FC42FF;
+}
 .listItem {
-  font-family: 'Montserrat';
-  font-style: normal;
+  @include fontParam('Montserrat',normal );
   font-weight: var(--fw-medium);
   font-size: 24px;
   line-height: 130%;
@@ -141,16 +150,14 @@ $transition: 0.5s all;
   margin-top: 7px;
 }
 .socialTitle {
-  font-family: 'Montserrat';
-  font-style: normal;
+  @include fontParam('Montserrat',normal );
   font-weight: var(--fw-medium);
   font-size: 10px;
   line-height: 130%;
   color: #7E7E7E;
 }
 .phone {
-  font-family: 'Montserrat';
-  font-style: normal;
+  @include fontParam('Montserrat',normal );
   font-weight: var(--fw-600);
   font-size: 28px;
   line-height: 130%;
@@ -318,6 +325,12 @@ $transition: 0.5s all;
     font-weight: var(--fw-medium);
     font-size: var(--fs-s);
     color: var(--black);
+  }
+  .listItem.activeLink {
+    @include fontParam('Montserrat',normal );
+    font-weight: var(--fw-medium);
+    font-size: 16px;
+    color: #FC42FF;
   }
   .li {
     margin: 0px;

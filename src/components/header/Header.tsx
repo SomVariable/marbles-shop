@@ -4,21 +4,13 @@ import Input from '../../UI/Input/Input';
 import Icon from '../../UI/Icon/Icon';
 import logo from './logo.png';
 import cn from 'classnames';
-import { ChangeEvent } from 'react';
-import { useState } from 'react';
+import { ChangeEvent, MouseEvent } from 'react';
+import { useState, useEffect } from 'react';
 
 const Header = () => {
   const [value, setValue] = useState('');
-  const [activeLink, setActiveLink] = useState(false);
   const [asidePanel, setAsidePanel] = useState(false);
-
-  const asideShow = () => {
-    setAsidePanel(true)
-  }
-
-  const asideHide = () => {
-    setAsidePanel(false)
-  }
+  const [contentLink, setContentLink] = useState('Акции');
 
   const list = [
     {clazz: styles.listItem, content: 'Акции', id: 1},
@@ -28,6 +20,34 @@ const Header = () => {
     {clazz: styles.listItem, content: 'Отзывы', id: 5},
   ]
 
+  useEffect(() => {
+    if (asidePanel) {
+     const res =  window.innerWidth - document.body.scrollWidth;
+     document.body.style.cssText = `
+     overflow: hidden;
+     padding-right: ${res}px;
+     `;
+    } else {
+     document.body.style.cssText = `
+     overflow: "";
+     padding-right: ${0}px; 
+     `
+    }
+   },[asidePanel])
+
+  const asideShow = () => {
+    setAsidePanel(true)
+  }
+
+  const asideHide = () => {
+    setAsidePanel(false)
+  }
+  const getContent = (e: MouseEvent<HTMLAnchorElement>) => {
+    const content = e.currentTarget.textContent;
+    if (content != null) {
+      setContentLink(content);
+    }
+  }
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value)
   }
@@ -58,7 +78,7 @@ const Header = () => {
             <ul className={styles.list}>
               {
                 list.map(({clazz, content, id}) => {
-                  return <li className={styles.li} key={id}><a className={cn(clazz, {[styles.active]: activeLink === true })} href="#">{content}</a></li>
+                  return <li className={styles.li} key={id}><a onClick={(e) => getContent(e)} className={cn(clazz, {[styles.activeLink]: contentLink === content})} href="#">{content}</a></li>
                 })
               } 
             </ul>
