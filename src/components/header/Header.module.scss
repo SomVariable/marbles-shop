@@ -1,0 +1,353 @@
+$parametrBorder: 1px solid #EEEEEE;
+$heightContent: 58px; 
+$transition: 0.5s all;
+@mixin flexParametrs ($display, $jc, $ai) {
+  display: $display;
+  justify-content: $jc;
+  align-items: $ai;
+}
+@mixin position ($posit, $num) {
+  position: $posit;
+  left: $num;
+  top: $num;
+  transform: translate(-$num, -$num)
+}
+@mixin borders ($parametr) {
+  border-right: $parametr;
+  border-bottom: $parametr;
+}
+.headerContent {
+  @include flexParametrs(flex,space-between ,center );
+  height: $heightContent;
+}
+.logo {
+  display: none;
+}
+.burger {
+  position: relative;
+  height: 100%;
+  button {
+    width: 65px;
+    height: 100%;
+    background-color: var(--secondary);
+    border-radius: 0;
+    border: 0;
+    @include borders($parametrBorder);
+      svg {
+        fill: var(--black);
+        rect {
+          height: 1px;
+        }
+        @include position(absolute, 50%);
+      }
+  }
+  svg:hover {
+    background: #FEDDFF;
+    border-radius: 5px;
+  }
+  button:hover {
+    background-color: transparent;
+    color: var(--secondary);
+    box-shadow: none;
+  }
+}
+.catalog {
+  display: none;
+}
+.inputSize {
+  height: 100%;
+  flex-grow: 1;
+  input {
+    border: none;
+    @include borders($parametrBorder);
+    border-radius: 0px;
+    height: 100%;
+    outline: none;
+    font-weight: var(--fw-regular);
+    font-size: var(--fs-xs);
+    color: var(--black);
+  }
+}
+.menu {
+  position: fixed;
+  opacity: 0;
+  top: 58px;
+  left: -100%;
+  width: 100%;
+  height: 100vh;
+  z-index: 1000000;
+  transition: $transition;
+  visibility: hidden;
+}
+.menu.activeMenu {
+  left: 0%;
+  visibility: visible;
+  opacity: 1; 
+}
+.menuBlock {
+  position: relative;
+  left: -100%;
+  width: 320px;
+  height: 476px;
+  padding: 35px 0px 0px 40px;
+  background: var(--secondary);
+  border-radius: 0 0 20px 20px;
+  transition: $transition;
+  z-index: 2222222;
+}
+.menuBlock.menuBlockActive {
+  left: 0%;
+  transition: $transition;
+}
+.close {
+  position: absolute;
+  border: none;
+  top: 38px;
+  right: 17px;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+}
+.li {
+  margin-bottom: 30px;
+}
+.li:last-child {
+  margin-bottom: 45px;
+}
+.listItem {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: var(--fw-medium);
+  font-size: 24px;
+  line-height: 130%;
+  color: var(--black);
+ }
+ .hr {
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  background-color: var(--black);
+  left: 0;
+  bottom: 145px;
+}
+.socialBlock {
+  width: 50px;
+  @include flexParametrs(flex, space-between, center );
+  margin-top: 7px;
+}
+.socialTitle {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: var(--fw-medium);
+  font-size: 10px;
+  line-height: 130%;
+  color: #7E7E7E;
+}
+.phone {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: var(--fw-600);
+  font-size: 28px;
+  line-height: 130%;
+  color: var(--black);
+}
+.overlay {
+  position: fixed;
+  top: 58px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+}
+.proc {
+  position: relative;
+  svg {
+    @include position(absolute, 50%);
+  }
+  flex-shrink: 0;
+  width: 56px;
+  height: 100%;
+  @include borders($parametrBorder);
+  svg:hover {
+    fill: #FEDDFF;
+  }
+}
+.basket {
+  display: block;
+  position: relative;
+  width: 56px;
+  height: 100%;
+  flex-shrink: 0;
+  svg {
+    @include position(absolute, 50%);
+  }
+  @include borders($parametrBorder);
+}
+
+.basketCircle {
+  @include flexParametrs(flex, center, center );
+  width: 10px;
+  height: 10px;
+  padding: 8px;
+  right: 12px;
+  top: 8px;
+  position: absolute;
+  background: #FFF3FF;
+  border-radius: 6px;
+  color: #C949CA;
+}
+@media (min-width: 576px){
+  .headerContent {
+    gap: 15px;
+    height: 49px;
+  }
+  .burger {
+    button {
+      border: 0;
+    }
+  }
+  .catalog {
+    display: block;
+    width: 137px;
+    height: 100%;
+    button {
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      display: flex;
+      font-size: 15px;
+    }  
+  }
+  .inputSize {
+    height: 100%;
+    input {
+      height: 100%;
+      border: 2px solid var(--color-grey);
+      border-radius: 20px;
+    }
+  } 
+  .menu {
+    top: 64px;
+  }
+  .overlay {
+    top: 64px;
+  }
+  .proc {
+    display: none;
+  }
+  .basket {
+    border: none;
+  }
+  
+}
+@media (min-width: 670px) {
+  .logo {
+    display: block;
+  }
+  .inputSize { 
+    width: 300px;
+  }
+}
+@media (min-width: 800px) {
+ .socialBlock {
+  min-width: 72px;
+ }
+}
+@media (min-width: 858px) {
+  .catalog {
+    width: 154px; 
+  }
+  .inputSize {
+    flex-grow: 0;
+    width: 407px;
+  }
+}
+@media (min-width: 992px) {
+  .logo {
+    display: none;
+  }
+  .burger {
+    display: none;
+  }
+  .catalog {
+    width: 140px; 
+  }
+  .inputSize {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 350px;
+  }
+  .menu {
+    width: 100%;
+    height: 100%;
+    display: block;
+    opacity: 1;
+    position: static;
+    visibility: visible;
+    background: none;
+    transition: none;  
+  }
+  .menuBlock {
+    position: static;
+    @include flexParametrs(flex,inherit ,center );
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    left: 0px;
+    margin: 0px;
+    transition: none;
+  }
+  .nav {
+    width: 100%;
+  }
+  .list {
+    @include flexParametrs(flex, space-between, center );
+    gap: 10px;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    background: var(--secondary);
+  }
+  .listItem {
+    font-weight: var(--fw-medium);
+    font-size: var(--fs-s);
+    color: var(--black);
+  }
+  .li {
+    margin: 0px;
+  }
+  .li:last-child {
+    margin-bottom: 0px;
+  }
+  .info {
+    display: none;
+  }
+  .overlay {
+    display: none;
+  }
+  .close {
+    display: none;
+  }
+}
+@media (min-width: 1200px) {
+  .logo {
+    display: block;
+  }
+  .catalog {
+    width: 154px; 
+  }
+  .inputSize {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 443px;
+  }
+  .menu {
+    width: 510px;
+  }
+}

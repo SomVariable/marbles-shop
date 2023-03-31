@@ -4,12 +4,13 @@ import cn from 'classnames'
 
 export interface IButtonProps extends Pick<React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, "className" | "children"> {
   appearance: "primary" | "secondary" | "option" | "shadow";
-  isOption?: boolean
+  isOption?: boolean;
+  onClick?: () => void
 }
 
-function Button({appearance, isOption = false, className, children}: IButtonProps) : JSX.Element{
+function Button({appearance, isOption = false, className, children, onClick}: IButtonProps) : JSX.Element{
   return (
-    <button className = {cn(styles.button, className, {
+    <button onClick={onClick} className = {cn(styles.button, className, {
       [styles.primary]: appearance == 'primary',
       [styles.secondary]: appearance == 'secondary',
       [styles.option]: appearance == 'option',
