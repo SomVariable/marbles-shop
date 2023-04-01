@@ -1,9 +1,6 @@
 .header {
   min-height: 144px;
 }
-.container {
-  display: block;
-}
 @media (min-width: 576px) {
   .header {
     padding: 15px;
@@ -13,10 +10,4 @@
   .header {
     padding: 30px;
    }
-}
-@media (min-width: 1400px) {
-  .container {
-    margin: 0 auto;
-    max-width: 1400px;
-  }
 }

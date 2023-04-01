@@ -1,0 +1,166 @@
+@mixin flexParam ($dis, $jc, $ai) {
+  display: $dis;
+  justify-content: $jc;
+  align-items: $ai;
+}
+@mixin buttonsParam ($width, $height) {
+  width: $width;
+  height: $height;
+}
+@mixin fontParam($family, $style) {
+  font-family: $family;
+  font-style: $style;
+}
+.sale {
+  min-height: 198px;
+  background: url('for320.png') center center / cover no-repeat;
+  padding: 36px 0px 36px 11px;
+}
+.mainTitle {
+  @include fontParam('Montserrat',normal );
+  font-weight: var(--fw-bold);
+  font-size: 28px;
+  line-height: 130%;
+  color: var(--secondary);
+}
+.subTitle {
+  @include fontParam('Montserrat',normal );
+  font-weight: var(--fw-bold);
+  font-size: var(	--fs-m);
+  line-height: 130%;
+  color: var(--secondary);
+  margin-bottom: 25px;
+}
+.primary {
+  width: 133px;
+  height: 41px;
+  background:  var(--secondary);
+  border-radius: 5px;
+  padding: 0px;
+  p {
+    @include flexParam(flex,center ,center );
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-s);
+    line-height: 130%;
+    color: #2D2D2D;
+  }
+}
+.more {
+  display: none;
+}
+
+@media (min-width: 445px) {
+.sale {
+  background: url('main.png') center center / cover no-repeat;
+}
+}
+@media (min-width: 576px) {
+.sale {
+  min-height: 250px;
+}
+.buttonWrap {
+  width: 300px;
+  @include flexParam(flex,space-between,center );
+}
+.mainTitle {
+  font-size: 30px;
+}
+.subTitle {
+  font-size: 20px;
+}
+.more {
+  display: block;
+  width: 133px;
+  height: 41px;
+  border: 2px solid #FFFFFF;
+  border-radius: 13px;
+  background: transparent;
+  padding: 0px;
+  p {
+    @include flexParam(flex,center ,center );
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-s);
+    line-height: 130%;
+    color: var(--secondary);
+  }
+}
+}
+@media (min-width: 690px) {
+.sale {
+  min-height: 300px;
+}
+}
+@media (min-width: 768px) {
+.buttonWrap {
+  width: 350px;
+}
+.primary {
+  @include buttonsParam(155px, 50px)
+}
+.more {
+  @include buttonsParam(155px, 50px)
+}
+.mainTitle {
+  font-size: 45px;
+  margin-bottom: 15px;
+}
+.subTitle {
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+}
+@media (min-width: 850px) {
+.sale {
+  min-height: 350px;
+}
+}
+@media (min-width: 992px) {
+.sale {
+  min-height: 400px;
+  padding: 45px 0px 45px 11px;
+}
+.buttonWrap {
+  width: 400px;
+}
+.primary {
+  @include buttonsParam(165px, 60px)
+}
+.more {
+  @include buttonsParam(165px, 60px)
+}
+.mainTitle {
+  font-size: 55px;
+}
+.subTitle {
+  font-size: 33px;
+}
+}
+@media (min-width: 1200px) {
+.sale {
+  min-height: 600px;
+  padding: 130px 0px 139px 50px;
+}
+.buttonWrap {
+  width: 516px;
+}
+.primary {
+  width: 241px;
+  height: 82px;
+  p {
+    font-size: 25px;
+  }
+}
+.more {
+  width: 235px;
+  height: 82px;
+  p {
+    font-size: 25px;
+  }
+}
+.mainTitle {
+  font-size: 80px;
+}
+.subTitle {
+  font-size: 63px;
+}
+}

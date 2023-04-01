@@ -1,15 +1,15 @@
 import React from 'react';
-import ExampleModule from '../../modules/Example/ExampleModule';
 
-import './App.module.scss';
+import styles from './App.module.scss';
 import { IAppProps } from './IApp.interfase';
 import HeaderModule from '../../modules/headerModule/HeaderModule';
+import SaleModule from '../../modules/saleModule/SaleModule';
 
 function App({...props}: IAppProps): JSX.Element {
-  return <div className="App"> 
-  {/* <ExampleModule /> */}
-      <HeaderModule/>
-    </div>;
+  return <div className={styles.container}> 
+          <HeaderModule/>
+          <SaleModule/>
+        </div>;
 }
 
 export default App;
