@@ -23,6 +23,7 @@ $transition: 0.5s all;
 .headerContent {
   @include flexParametrs(flex,space-between ,center );
   height: $heightContent;
+  margin-bottom: 29px;
 }
 .logo {
   display: none;
