@@ -6,7 +6,7 @@ import HeaderModule from '../../modules/headerModule/HeaderModule';
 import SaleModule from '../../modules/saleModule/SaleModule';
 
 function App({...props}: IAppProps): JSX.Element {
-  return <div className={styles.container}> 
+  return <div className='app'> 
           <HeaderModule/>
           <SaleModule/>
         </div>;

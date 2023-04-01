@@ -5,8 +5,10 @@ import SubHeader from '../../components/subHeader/SubHeader';
 const HeaderModule = () => {
   return (
     <header className={styles.header}>  
-      <Header/>
-      <SubHeader/>
+      <div className={styles.container}>
+        <Header/>
+        <SubHeader/>
+      </div>
     </header>
   )
 }

@@ -16,6 +16,10 @@
   background: url('for320.png') center center / cover no-repeat;
   padding: 36px 0px 36px 11px;
 }
+.container {
+  display: block;
+  margin: 0 auto;
+}
 .mainTitle {
   @include fontParam('Montserrat',normal );
   font-weight: var(--fw-bold);
@@ -163,4 +167,9 @@
 .subTitle {
   font-size: 63px;
 }
+}
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1400px;
+  }
 }
