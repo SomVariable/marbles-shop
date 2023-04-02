@@ -88,7 +88,7 @@
     @include flexParametrs(flex,space-between ,center );
     min-width: 100%; 
     overflow-x: initial; 
-    gap: 16px;
+    gap: 11px;
   }
   .subLi {
     padding: 5px 10px;
@@ -142,11 +142,11 @@
     padding: 0px;
     a {
       width: initial;
-      font-size: 16px;
+      font-size: 15px;
     }
   }
   .phone {
-    min-width: 148px;
+    min-width: 150px;
     display: flex;
     align-items: center;
   }
