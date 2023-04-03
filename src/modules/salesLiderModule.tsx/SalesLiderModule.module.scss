@@ -1,13 +1,20 @@
-.popular {
-  min-height: 725px;
-  padding: 30px 15px;
+@mixin fontParam($family, $style) {
+  font-family: $family;
+  font-style: $style;
+}
+@mixin lineSpacing ($line, $spacing) {
+  line-height: $line;
+  letter-spacing: $spacing;
+}
+.saleLider {
+  min-height: 653px;
+  padding: 0px 15px 30px 15px;
 }
 .container {
   margin: 0 auto;
 }
-.popularTitle {
-  font-family: 'Montserrat';
-  font-style: normal;
+.liderTitle {
+  @include fontParam('Montserrat',normal );
   font-weight: var(--fw-bold);
   font-size: var(--fs-m);
   letter-spacing: 0.03em;
@@ -20,55 +27,68 @@
 .cardWrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, auto);
-  grid-auto-rows: auto;
-  gap: 20px;
+  grid-template-rows: repeat(2, auto);
+  grid-auto-rows: minmax(auto, 387px);
+  gap: 15px;
   justify-content: center;
   margin-top: 15px;
 }
 @media (min-width: 768px) {
-  .popular{
-    min-height: 610px;
+  .saleLider {
+    min-height: 380px;
   }
   .cardWrapper {
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, auto);
+    grid-template-rows: repeat(1, auto);
     grid-auto-rows: auto;
   }
 }
 @media (min-width: 992px) {
+  .saleLider {
+    min-height: 420px;
+  }
   .titleBlock {
     position: relative;
     display: flex;
     align-items: center;
   }
+  .liderTitle {
+    font-size: var(--fs-24);
+  }
   .titleLink {
     position: absolute;
-    left: 332px;
+    left: 232px;
     top: 6px;
     display: block;
-    font-family: 'Montserrat';
-    font-style: normal;
+    @include fontParam('Montserrat',normal );
     font-weight: var(--fw-regular);
     font-size: var(--fs-s);
-    line-height: 130%;
-    letter-spacing: 0.03em;
+    @include lineSpacing(130%,0.03 );
     color: var(--black);
     svg {
       margin-left: 10px;
     }
   }
   .popularTitle {
-    font-size: 24px;
+    font-size: var(--fs-24);
+  }
+  .cardWrapper {
+    grid-template-rows: repeat(1, 276px);
   }
 }
 @media (min-width: 1200px) {
-  .popularTitle {
+  .saleLider {
+    min-height: 460px;
+  }
+  .liderTitle {
     font-size: 40px;
   }
   .titleLink {
-    left: 550px;
+    left: 385px;
     top: 18px;
+  }
+  .cardWrapper {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 @media (min-width: 1400px) {
