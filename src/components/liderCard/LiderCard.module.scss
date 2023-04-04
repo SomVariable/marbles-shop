@@ -131,10 +131,9 @@
    }
    .inBasket {
     width: 90%;
-    height: 72px;
     position: absolute;
     opacity: 0;
-    top: 80%;
+    top: 62%;
     left: 50%;
     transition: 1s all;
     transform: translate(-50%, -50%);
@@ -198,6 +197,7 @@
     span {
       font-size: var(--fs-m);
       display: inline;
+      line-height: 40px;
     }
   }
   .discountInBlock {
@@ -212,7 +212,6 @@
     font-size: var(--fs-l);
   }
   .cardWrap {
-    height: 100%;
     img {
       height: 100%;
     }

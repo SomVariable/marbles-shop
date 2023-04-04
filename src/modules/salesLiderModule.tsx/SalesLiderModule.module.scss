@@ -7,7 +7,7 @@
   letter-spacing: $spacing;
 }
 .saleLider {
-  min-height: 653px;
+  min-height: 594px;
   padding: 0px 15px 30px 15px;
 }
 .container {
@@ -45,7 +45,7 @@
 }
 @media (min-width: 992px) {
   .saleLider {
-    min-height: 420px;
+    min-height: 420px; 
   }
   .titleBlock {
     position: relative;
@@ -73,7 +73,7 @@
     font-size: var(--fs-24);
   }
   .cardWrapper {
-    grid-template-rows: repeat(1, 276px);
+    grid-template-rows: repeat(1, auto);
   }
 }
 @media (min-width: 1200px) {
@@ -89,6 +89,7 @@
   }
   .cardWrapper {
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 1fr);
   }
 }
 @media (min-width: 1400px) {

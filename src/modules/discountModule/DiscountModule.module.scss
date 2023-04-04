@@ -1,0 +1,157 @@
+@mixin lineSpacing ($line, $spacing) {
+  line-height: $line;
+  letter-spacing: $spacing;
+}
+@mixin fontParam($family, $style) {
+  font-family: $family;
+  font-style: $style;
+}
+@mixin flexParam ($flex, $goriz, $vertical) {
+  display: $flex;
+  justify-content: $goriz;
+  align-items: $vertical;
+}
+.discount {
+  position: relative;
+  min-height: 271px;
+  padding: 20px 0px 30px 0px;
+  background: url(main.png) center center / cover no-repeat;
+}
+.container {
+  margin: 0 auto;
+}
+.discountTitle {
+  @include fontParam('Montserrat', normal);
+  font-weight: var(--fw-bold);
+  font-size: 40px;
+  @include lineSpacing(155%,0.03em );
+  text-align: center;
+  color: var(--secondary);
+}
+.discountSub {
+  @include fontParam('Montserrat', normal);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-m);
+  text-align: center;
+  @include lineSpacing(155%,0.03em );
+  color: var(--secondary);
+  margin-bottom: 25px;
+}
+.discountForm {
+ @include flexParam(flex, center,center );
+ flex-direction: column;
+ z-index: 56;
+ input {
+  width: 277px;
+  height: 40px;
+  margin-bottom: 15px;
+ }
+ button {
+  padding: 20px 25px;
+  gap: 10px;
+  width: 277px;
+  height: 60px;
+  border: 2px solid var(--secondary);
+  border-radius: 11px;
+  @include fontParam('Montserrat', normal);
+  font-weight: var(--fw-bold);
+  background-color: transparent;
+  font-size: var(--fs-m);
+  @include lineSpacing(120%,0.03em );
+  color: var(--secondary);
+ }
+}
+.img {
+  display: none;
+}
+@media (min-width: 768px) {
+  .discount {
+    min-height: 315px;
+  }
+  .img {
+    position: absolute;
+    display: block;
+    top: -31px;
+    left: 0px;
+    width: 436px;
+    height: 346px;
+    z-index: 1;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .content {
+    @include flexParam(flex, center,center );
+    flex-direction: column;
+    margin-left: 340px;
+  }
+}
+@media (min-width: 992px) {
+  .img {
+    top: 0px;
+    left: 0px;
+    width: 517px;
+    height: 359px;
+  }
+  .discountTitle {
+    font-size: 70px;
+  }
+  .discountSub {
+    font-size: 30px;
+  }
+  .discountForm {
+    input {
+     width: 330px;
+     height: 40px;
+     margin-bottom: 15px;
+    }
+    button {
+     padding: 20px 25px;
+     width: 330px;
+     height: 60px;
+    }
+   }
+}
+@media (min-width: 1200px) {
+  .img {
+    top: -44px;
+    left: 0px;
+    width: 675px;
+    height: 517px;
+  }
+  .content {
+    margin-left: 520px;
+  }
+  .discountTitle {
+    font-size: 90px;
+  }
+  .discountSub {
+    font-size: 50px;
+  }
+  .discountForm {
+    input {
+     width: 473px;
+     height: 75.44px;
+     margin-bottom: 30px;
+    }
+    button {
+     padding: 20px 92px;
+     width: 473px;
+     height: 75.44px;
+     p {
+      @include fontParam('Montserrat', normal);
+      font-weight: var(--fw-bold);
+      font-size: 28.7392px;
+      @include lineSpacing(120%,0.03em );
+      color: var(--secondary);
+     }
+    }
+   }
+}
+@media (min-width: 1400px) {
+.container {
+  max-width: 1400px;
+}
+}
