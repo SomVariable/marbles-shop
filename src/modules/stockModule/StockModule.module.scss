@@ -6,14 +6,14 @@
   line-height: $line;
   letter-spacing: $spacing;
 }
-.saleLider {
+.stock {
   min-height: 594px;
-  padding: 0px 15px 30px 15px;
+  padding: 30px 15px 30px 15px;
 }
 .container {
   margin: 0 auto;
 }
-.liderTitle {
+.stockTitle {
   @include fontParam('Montserrat',normal );
   font-weight: var(--fw-bold);
   font-size: var(--fs-m);
@@ -28,13 +28,13 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, auto);
-  grid-auto-rows: minmax(auto, 387px);
+  grid-auto-rows: auto;
   gap: 15px;
   justify-content: center;
   margin-top: 15px;
 }
 @media (min-width: 768px) {
-  .saleLider {
+  .stock {
     min-height: 380px;
   }
   .cardWrapper {
@@ -44,7 +44,7 @@
   }
 }
 @media (min-width: 992px) {
-  .saleLider {
+  .stock {
     min-height: 420px; 
   }
   .titleBlock {
@@ -52,12 +52,12 @@
     display: flex;
     align-items: center;
   }
-  .liderTitle {
+  .stockTitle {
     font-size: var(--fs-24);
   }
   .titleLink {
     position: absolute;
-    left: 232px;
+    left: 100px;
     top: 6px;
     display: block;
     @include fontParam('Montserrat',normal );
@@ -77,14 +77,14 @@
   }
 }
 @media (min-width: 1200px) {
-  .saleLider {
+  .stock {
     min-height: 460px;
   }
-  .liderTitle {
+  .stockTitle {
     font-size: 40px;
   }
   .titleLink {
-    left: 385px;
+    left: 160px;
     top: 18px;
   }
   .cardWrapper {

@@ -1,4 +1,4 @@
-import styles from './LiderCard.module.scss';
+import styles from './MainCard.module.scss';
 import Button from '../../UI/Button/Button';
 import { useState } from 'react';
 import cn from 'classnames';
@@ -11,7 +11,7 @@ interface Props {
   content: string;
 }
 
-const LiderCard = ({src, price, oldPrice, discount, content}:Props) => {
+const MainCard = ({src, price, oldPrice, discount, content}:Props) => {
 
   const [hover, setHover] = useState(false);
 
@@ -46,4 +46,4 @@ const LiderCard = ({src, price, oldPrice, discount, content}:Props) => {
     </div>
   )
 }
-export default LiderCard;
+export default MainCard;
