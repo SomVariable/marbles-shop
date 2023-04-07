@@ -1,0 +1,197 @@
+@mixin fFfSlHC {
+  font-family: 'Montserrat';
+  font-style: normal;
+  line-height: 130%;
+  color: var(--black);
+}
+
+@mixin span {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-10);
+  line-height: 130%;
+  color: var(--black);
+  margin-top: 6px;
+}
+
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin title {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-m);
+  line-height: 130%;
+  color: var(--black);
+  margin-bottom: 15px;
+}
+
+.footer {
+  padding: 0px 59px 10px 59px;
+  @media(min-width: 992px) {
+    padding: 0px 20px 10px 20px;
+  }
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.wrapper {
+  @include flexColumn;
+  @media (min-width: 568px) {
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+    align-items: flex-start;
+  }
+  @media (min-width: 620px) {
+    gap: 115px; 
+  }
+  @media (min-width: 992px) {
+    gap: 170px; 
+    justify-content: flex-start;
+  }
+  @media (min-width: 1200px) {
+    gap: 232px;
+ }
+}
+
+.contactsBlock {
+  @include flexColumn;
+  margin-bottom: 30px;
+  @media (min-width: 1200px) {
+    align-items: flex-start;
+ }
+}
+
+.contacts {
+  @include title;
+  @media (min-width: 568px) {
+    font-size: 25px;
+  }
+  @media (min-width: 768px) {
+    font-size: 28px;
+  }
+  @media (min-width: 1200px) {
+     font-size: 40px;
+  }
+}
+
+.tel {
+  @include fFfSlHC;
+  font-weight: var(--fw-600);
+  font-size: 21px;
+  margin-bottom: 20px;
+  @media (min-width: 768px) {
+    font-size: 24px;
+  }
+  @media (min-width: 1200px) {
+    font-size: 53px;
+ }
+}
+
+.socialBlock {
+  display: flex;
+}
+
+.insta {
+  @include flexColumn;
+  margin-right: 25px;
+  span {
+    @include span;
+    @media (min-width: 768px) {
+      font-size: 12px;
+    }
+    @media (min-width: 1200px) {
+      font-size: 15px;
+   }
+  }
+}
+
+.whatsUp {
+  @include flexColumn;
+  span {
+    @include span;
+    @media (min-width: 768px) {
+      font-size: 12px;
+    }
+     @media (min-width: 1200px) {
+     font-size: 15px;
+  }
+  }
+}
+
+.addresBlock {
+  @include flexColumn;
+  @media (min-width: 1200px) {
+    align-items: flex-start;
+ }
+ @media (min-width: 1200px) {
+  align-items: flex-start;
+}
+}
+
+.addres {
+  @include title;
+  @media (min-width: 568px) {
+    font-size: 25px;
+  }
+  @media (min-width: 768px) {
+    font-size: 28px;
+  }
+  @media (min-width: 1200px) {
+    font-size: 40px;
+ }
+}
+
+.addresStreet {
+  @include fFfSlHC;
+  font-weight: var(--fw-600);
+  font-size: 19px;
+  text-align: center;
+  margin-bottom: 20px;
+  @media (min-width: 568px) {
+    font-size: 21px;
+  }
+  @media (min-width: 768px) {
+    font-size: 24px;
+  }
+  @media (min-width: 1200px) {
+    font-size: 40px;
+    text-align: left;
+ }
+}
+
+.work {
+  @include fFfSlHC;
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-10);
+  @media (min-width: 768px) {
+    font-size: 14px;
+  }
+  @media (min-width: 1200px) {
+    font-size: 18px;
+ }
+}
+
+.allTime {
+  @include fFfSlHC;
+  font-weight: var(--fw-600);
+  font-size: var(--fs-xs);
+  @media (min-width: 568px) {
+    font-size: 14px;
+  }
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
+  @media (min-width: 1200px) {
+    font-size: 24px;
+ }
+}

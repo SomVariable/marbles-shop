@@ -8,6 +8,8 @@ import PopularModule from '../../modules/popularModule/PopularModule';
 import SalesLiderModule from '../../modules/salesLiderModule.tsx/SalesLiderModule';
 import DiscountModule from '../../modules/discountModule/DiscountModule';
 import StockModule from '../../modules/stockModule/StockModule';
+import WorkSlider from '../../modules/worksSlider/WorkSlider';
+import Footer from '../../modules/footer/Footer';
 
 function App({...props}: IAppProps): JSX.Element {
   return <div className='app'> 
@@ -17,6 +19,8 @@ function App({...props}: IAppProps): JSX.Element {
           <SalesLiderModule/>
           <DiscountModule/>
           <StockModule/>
+          <WorkSlider/>
+          <Footer/>
         </div>;
 }
 
