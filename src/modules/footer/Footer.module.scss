@@ -41,6 +41,9 @@
 
 .container {
   margin: 0 auto;
+  @media(min-width: 1400px) {
+    max-width: 1400px;
+  }
 }
 
 .wrapper {

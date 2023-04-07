@@ -28,38 +28,38 @@ const WorkSlider = () => {
         Наши работы
         </h3>
           <Swiper className='swiper-container'
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
-        navigation
-        pagination={false}
-        scrollbar={false}
-        spaceBetween={15}
-        slidesPerView={1.5}
-        grabCursor = {true}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
-        breakpoints={{
-          320: {
-            width: 320,
-            slidesPerView: 1.5,
-          },
-          568: {
-            width: 568,
-            slidesPerView: 2,
-          },
-          768: {
-            width: 768,
-            slidesPerView: 2.5,
-          },
-          992: {
-            width: 992,
-            slidesPerView: 3,
-          },
-          1200: {
-            width: 1200,
-            spaceBetween: 25,
-            slidesPerView: 3,
-          },
-        }}
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            navigation
+            pagination={false}
+            scrollbar={false}
+            spaceBetween={15}
+            slidesPerView={1.5}
+            grabCursor = {true}
+            onSlideChange={() => console.log('slide change')}
+            onSwiper={(swiper) => console.log(swiper)}
+            breakpoints={{
+            320: {
+              /* width: 320, */
+              slidesPerView: 1.5,
+            },
+            568: {
+              /* width: 568, */
+              slidesPerView: 2,
+            },
+            768: {
+            /*  width: 768, */
+              slidesPerView: 2.5,
+            },
+            992: {
+              /* width: 992, */
+              slidesPerView: 3,
+            },
+            1200: {
+              /* width: 1200, */
+              spaceBetween: 25,
+              slidesPerView: 3.5,
+            },
+          }}
         >
         {
           img.map(({src, id}) => {
