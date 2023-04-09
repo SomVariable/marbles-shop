@@ -1,0 +1,31 @@
+.productCounter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    font-weight: 600;
+    font-size: 18px;
+    
+    width: 140px;
+    height: 40px;
+    padding: 11px 15px;
+
+    border: 1px solid #000000;
+    border-radius: 12px;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.text{
+    display: inline;
+}
