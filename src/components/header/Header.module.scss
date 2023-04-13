@@ -5,29 +5,35 @@ $transition: 0.5s all;
   font-family: $ff;
   font-style: $fs;
 }
+
 @mixin flexParametrs ($display, $jc, $ai) {
   display: $display;
   justify-content: $jc;
   align-items: $ai;
 }
+
 @mixin position ($posit, $num) {
   position: $posit;
   left: $num;
   top: $num;
   transform: translate(-$num, -$num)
 }
+
 @mixin borders ($parametr) {
   border-right: $parametr;
   border-bottom: $parametr;
 }
+
 .headerContent {
   @include flexParametrs(flex,space-between ,center );
   height: $heightContent;
   margin-bottom: 29px;
 }
+
 .logo {
   display: none;
 }
+
 .burger {
   position: relative;
   height: 100%;
@@ -47,7 +53,7 @@ $transition: 0.5s all;
     @include position(absolute, 50%);
   }
   svg:hover {
-    background: #FEDDFF;
+    background: none;
     border-radius: 5px;
   }
   button:hover {
@@ -56,9 +62,11 @@ $transition: 0.5s all;
     box-shadow: none;
   }
 }
+
 .catalog {
   display: none;
 }
+
 .inputSize {
   height: 100%;
   flex-grow: 1;
@@ -72,7 +80,11 @@ $transition: 0.5s all;
     font-size: var(--fs-xs);
     color: var(--black);
   }
+  svg:hover {
+    fill: black;
+  }
 }
+
 .menu {
   position: fixed;
   opacity: 0;
@@ -84,11 +96,13 @@ $transition: 0.5s all;
   transition: $transition;
   visibility: hidden;
 }
+
 .menu.activeMenu {
   left: 0%;
   visibility: visible;
   opacity: 1; 
 }
+
 .menuBlock {
   position: relative;
   left: -100%;
@@ -100,10 +114,12 @@ $transition: 0.5s all;
   transition: $transition;
   z-index: 2222222;
 }
+
 .menuBlock.menuBlockActive {
   left: 0%;
   transition: $transition;
 }
+
 .close {
   position: absolute;
   border: none;
@@ -113,23 +129,28 @@ $transition: 0.5s all;
   outline: none;
   cursor: pointer;
 }
+
 .list {
   display: flex;
   flex-direction: column;
   list-style-type: none;
 }
+
 .li {
   margin-bottom: 30px;
 }
+
 .li:last-child {
   margin-bottom: 45px;
 }
+
 .listItem.activeLink {
   @include fontParam('Montserrat',normal );
   font-weight: var(--fw-medium);
   font-size: 24px;
   color: #FC42FF;
 }
+
 .listItem {
   @include fontParam('Montserrat',normal );
   font-weight: var(--fw-medium);
@@ -137,7 +158,8 @@ $transition: 0.5s all;
   line-height: 130%;
   color: var(--black);
  }
- .hr {
+
+.hr {
   position: absolute;
   height: 1px;
   width: 100%;
@@ -145,11 +167,13 @@ $transition: 0.5s all;
   left: 0;
   bottom: 145px;
 }
+
 .socialBlock {
   width: 50px;
   @include flexParametrs(flex, space-between, center );
   margin-top: 7px;
 }
+
 .socialTitle {
   @include fontParam('Montserrat',normal );
   font-weight: var(--fw-medium);
@@ -157,6 +181,7 @@ $transition: 0.5s all;
   line-height: 130%;
   color: #7E7E7E;
 }
+
 .phone {
   @include fontParam('Montserrat',normal );
   font-weight: var(--fw-600);
@@ -164,6 +189,7 @@ $transition: 0.5s all;
   line-height: 130%;
   color: var(--black);
 }
+
 .overlay {
   position: fixed;
   top: 58px;
@@ -172,6 +198,7 @@ $transition: 0.5s all;
   height: 100%;
   background-color: rgba($color: #000000, $alpha: 0.5);
 }
+
 .proc {
   position: relative;
   svg {
@@ -182,9 +209,10 @@ $transition: 0.5s all;
   height: 100%;
   @include borders($parametrBorder);
   svg:hover {
-    fill: #FEDDFF;
+    fill: black;
   }
 }
+
 .basket {
   display: block;
   position: relative;
@@ -193,6 +221,9 @@ $transition: 0.5s all;
   flex-shrink: 0;
   svg {
     @include position(absolute, 50%);
+  }
+  svg:hover {
+    fill: black;
   }
   @include borders($parametrBorder);
 }
@@ -209,16 +240,19 @@ $transition: 0.5s all;
   border-radius: 6px;
   color: #C949CA;
 }
+
 @media (min-width: 576px){
   .headerContent {
     gap: 11px;
     height: 49px;
   }
+
   .burger {
     button {
       border: 0;
     }
   }
+
   .catalog {
     display: block;
     width: 137px;
@@ -229,8 +263,13 @@ $transition: 0.5s all;
       align-items: center;
       display: flex;
       font-size: 15px;
+    }
+    button:hover {
+      background: var(--accent);
+      box-shadow: none;
     }  
   }
+
   .inputSize {
     height: 100%;
     input {
@@ -239,57 +278,77 @@ $transition: 0.5s all;
       border-radius: 20px;
     }
   } 
+
   .menu {
     top: 64px;
   }
+
   .overlay {
     top: 64px;
   }
+
   .proc {
     display: none;
   }
+
   .basket {
     border: none;
   }
-  
 }
+
 @media (min-width: 670px) {
   .logo {
     display: block;
   }
+
   .inputSize { 
     width: 300px;
   }
 }
+
 @media (min-width: 800px) {
  .socialBlock {
   min-width: 72px;
  }
 }
+
 @media (min-width: 858px) {
   .catalog {
     width: 154px; 
   }
+
   .inputSize {
     flex-grow: 0;
     width: 407px;
   }
 }
+
 @media (min-width: 992px) {
   .logo {
     display: none;
   }
+
   .burger {
     display: none;
   }
+
   .catalog {
     width: 140px; 
+    button:hover {
+      background: var(--accent-bold);
+      box-shadow: 0px 4px 4px rgba($color: #000000, $alpha: .3);;
+    } 
   }
+
   .inputSize {
     flex-grow: 0;
     flex-shrink: 0;
     width: 350px;
+    svg:hover {
+      fill: var(--accent);
+    }
   }
+
   .menu {
     width: 100%;
     height: 100%;
@@ -300,6 +359,7 @@ $transition: 0.5s all;
     background: none;
     transition: none;  
   }
+
   .menuBlock {
     position: static;
     @include flexParametrs(flex,inherit ,center );
@@ -310,9 +370,11 @@ $transition: 0.5s all;
     margin: 0px;
     transition: none;
   }
+
   .nav {
     width: 100%;
   }
+
   .list {
     @include flexParametrs(flex, space-between, center );
     gap: 10px;
@@ -322,45 +384,62 @@ $transition: 0.5s all;
     padding: 0px;
     background: var(--secondary);
   }
+
   .listItem {
     font-weight: var(--fw-medium);
     font-size: var(--fs-s);
     color: var(--black);
   }
+
   .listItem.activeLink {
     @include fontParam('Montserrat',normal );
     font-weight: var(--fw-medium);
     font-size: 16px;
     color: #FC42FF;
   }
+
   .li {
     margin: 0px;
   }
+
   .li:last-child {
     margin-bottom: 0px;
   }
+
   .info {
     display: none;
   }
+
+  .basket {
+    svg:hover {
+      fill: var(--accent);
+    }
+  }
+
   .overlay {
     display: none;
   }
+
   .close {
     display: none;
   }
 }
+
 @media (min-width: 1200px) {
   .logo {
     display: block;
   }
+
   .catalog {
     width: 154px; 
   }
+
   .inputSize {
     flex-grow: 0;
     flex-shrink: 0;
     width: 443px;
   }
+
   .menu {
     width: 510px;
   }

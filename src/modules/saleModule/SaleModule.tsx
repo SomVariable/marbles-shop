@@ -3,12 +3,6 @@ import Button from '../../UI/Button/Button';
 
 const SaleModule = () => {
 
-  let text: string = 'Покажите';
-
-  if (window.screen.availWidth >= 576) {
-    text = 'Все акции';
-  }
-
   return (
     <section className={styles.sale}>
      <div className={styles.container}>
@@ -20,7 +14,8 @@ const SaleModule = () => {
         </h2>
         <div className={styles.buttonWrap}>
           <Button appearance = {'primary'} isOption = {false} className ={styles.primary}> 
-            {text}
+            <div className={styles.show}>Покажите</div>
+            <div className={styles.all}>Все акции</div>
           </Button>
           <Button appearance = {'primary'} isOption = {false} className ={styles.more}>
             Подробнее

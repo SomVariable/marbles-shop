@@ -61,7 +61,7 @@ const Header = () => {
         </picture>
       </a>
       <div className={styles.burger}>
-        <Button onClick = {asideShow} className={styles.burger} isOption = {true} appearance = {'option'}/>
+        <Button onClick = {asideShow} isOption = {true} appearance = {'option'}/>
       </div>
       <div className={styles.catalog}>
         <Button isOption = {true} appearance = {'option'} children = {'Каталог'}/>
