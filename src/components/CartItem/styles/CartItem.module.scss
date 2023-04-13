@@ -7,10 +7,9 @@
     "h h h h"
     "p p d d"
     ". c c ."    ;
+    position: relative;
     gap: 20px 0;
     padding: 15px 10px;
-    background-color: bisque;
-    border: 1px solid black;
 
 
     //delete
@@ -72,4 +71,12 @@
         justify-self: center;
         align-self: center;
     }
+}
+
+
+.cross{
+    position: absolute;
+    top: 0;
+    right: 0;
+    
 }

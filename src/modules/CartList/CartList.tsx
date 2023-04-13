@@ -1,26 +1,19 @@
-import CartItem, { cartItem } from "../../components/CartItem/CartItem"
+import CartItem from "../../components/CartItem/CartItem"
 import cn from "classnames"
 import styles from "./styles/CartList.module.scss"
-interface ICartListProps extends Pick<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "className">{
+import { useAppSelector } from "../../store/store"
+interface ICartListProps extends Pick<React.DetailedHTMLProps<React.HTMLAttributes<HTMLUListElement>, HTMLUListElement>, "className">{
   
 }
 
-const item: cartItem =  { 
-  type: "Композиция шаров на день рождения",
-  categoryes: ["som"],
-  price: 2500,
-  discount: 2700,
-  composition: "asda",
-  shape: "asda",
-  description: "asda"
+const CartList = ({className}: ICartListProps) => {
+  const products = useAppSelector((state) => state.cartListReducer.products)
+  const productList = products.map(product => {
+    return <CartItem key = {product.type} className = {styles.item} cartInfo = {product}/>
+  })
+  
+  return <ul className = {cn(styles.list, className)}>
+    {productList? productList: "empty"}
+  </ul>
 }
-
-const CartList = ({className}: ICartListProps) => (
-  <div className = {cn(styles.list, className)}>
-    <CartItem className = {styles.item} cartInfo = {item}/>
-    <CartItem className = {styles.item} cartInfo = {item}/>
-    <CartItem className = {styles.item} cartInfo = {item}/>
-    <CartItem className = {styles.item} cartInfo = {item}/>
-  </div>
-)
 export default CartList

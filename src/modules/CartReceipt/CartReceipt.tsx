@@ -5,6 +5,7 @@ import Input from "../../UI/Input/Input"
 import styles from "./styles/CartReceipt.module.scss"
 import cn from "classnames"
 import Button from "../../UI/Button/Button"
+import { useAppSelector } from "../../store/store"
 
 
 interface ICartReceiptProps extends Pick<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "className">{
@@ -12,7 +13,7 @@ interface ICartReceiptProps extends Pick<React.DetailedHTMLProps<React.HTMLAttri
 }
 const CartReceipt = ({className}: ICartReceiptProps) => {
   const [phonNumber, setPhoneNumber] = useState('')
-  
+  const {totalPrice, totalCount} = useAppSelector((state) => state.cartListReducer)
   const updatePhoneNumber = (event: React.ChangeEvent<HTMLInputElement>) => {
     setPhoneNumber(event.target.value)
   }
@@ -20,13 +21,13 @@ const CartReceipt = ({className}: ICartReceiptProps) => {
 
   return ( 
   <div className = {cn(styles.receipt, className)}>
-    <Hheader type="h4">Детали заказа</Hheader>
+    <Hheader className = {styles.header} type="h4">Детали заказа</Hheader>
     <CustomText className = {styles.count} type="medium">Колличество</CustomText>
     <CustomText className = {styles.sum} type="medium">Сумма</CustomText>
-    <CustomText className = {styles.countNumber} type="medium">1</CustomText>
-    <CustomText className = {styles.sumNumber} type="medium">4 977,00</CustomText>
-    <Input value = {phonNumber} setValue={updatePhoneNumber}/>
-    <Button appearance="primary">Заказать</Button>
+    <CustomText className = {styles.countNumber} type="medium">{totalCount}</CustomText>
+    <CustomText className = {styles.sumNumber} type="medium">{totalPrice}</CustomText>
+    <Input className = {styles.phone} value = {phonNumber} setValue={updatePhoneNumber}/>
+    <Button className = {styles.buttom} appearance="primary">Заказать</Button>
   </div>)
 }
 export default CartReceipt
