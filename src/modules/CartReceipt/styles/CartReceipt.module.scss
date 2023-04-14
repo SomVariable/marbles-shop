@@ -1,0 +1,62 @@
+
+
+.receipt{
+    display: grid;
+    max-height: 393px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr auto auto;
+    grid-template-areas: 
+    "header header"
+    "count countNumber"
+    "price priceNumber"
+    "phone phone"
+    "button button";
+
+    max-width: 100%;
+    padding: 25px;
+
+    border: 2px solid #000000;
+    border-radius: 21px;
+
+    
+}
+
+
+.header{
+    grid-area: header;
+}
+
+.count{
+    grid-area: count;
+    margin-top: 15px;
+
+}
+
+.sum{
+    grid-area: price;
+    margin-top: 15px;
+}
+
+.countNumber{
+    grid-area: countNumber;
+    justify-self: end;
+    margin-top: 15px;
+
+}
+
+.sumNumber{
+    grid-area: priceNumber;
+    justify-self: end;
+    margin-top: 15px;
+
+}
+
+.phone{
+    grid-area: phone;
+    margin-top: 40px;
+}
+
+.buttom{
+    grid-area: button;
+    margin-top: 25px;
+}

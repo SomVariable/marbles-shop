@@ -1,0 +1,49 @@
+@use '../../../styles/media-breackpoints/media-breackpoints';
+
+.list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.item{
+    width: 100%;
+    margin-bottom: 25px;
+    box-sizing: border-box;
+    border-top: 1px solid#A7A7A7;
+    
+   
+
+    @media #{media-breackpoints.$ui-tablet-min}{
+        width: calc(100% / 2 - 14px);
+        margin-right: 25px;
+
+        &:nth-child(2n){
+            margin-right: 0;
+        }
+    }
+
+    @media #{media-breackpoints.$ui-desktop-min}{
+        width: calc(100% / 3 - 17px);
+
+        &:nth-child(2n){
+            margin-right: 25px;
+        }
+        
+        &:nth-child(3n){
+            margin-right: 0;
+        }
+    }
+
+    @media #{media-breackpoints.$ui-desktop-lg-min}{
+        width: 100%;
+        max-width: 100%;
+        margin-right: 0;
+
+        &:nth-child(2n){
+            margin-right: 0;
+        }
+    }
+}
+

@@ -1,0 +1,48 @@
+@use '../../../styles/media-breackpoints/media-breackpoints';
+
+
+.cart{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas: 
+    "header header header header"
+    "adress adress backLink backLink"
+    "list list list list "
+    "recipt recipt recipt recipt";
+    gap: 0 60px;
+
+    @media #{media-breackpoints.$ui-tablet-min}{
+        
+    }
+
+    @media #{media-breackpoints.$ui-desktop-min}{
+          
+    }
+
+    @media #{media-breackpoints.$ui-desktop-lg-min}{
+        grid-template-columns: 1fr 1fr 1fr 500px;
+        grid-template-areas: 
+            "header header header header"
+            "adress adress backLink ."
+            "list list list recipt";
+    }
+}
+
+.recipt{
+    grid-area: recipt;
+    min-width: 260px;
+}
+
+.list{
+    grid-area: list;
+}
+
+.adress{
+    grid-area: adress;
+}
+
+.backLink{
+    grid-area: backLink;
+    justify-self: end;
+}

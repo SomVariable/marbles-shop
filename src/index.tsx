@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.scss';
 import App from './pages/App/App';
+import { BrowserRouter as Rourer } from 'react-router-dom'
+import { Provider } from 'react-redux';
+import store from './store/store';
 
 
 const root = ReactDOM.createRoot(
@@ -9,8 +12,11 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <>
-    <App />
+    <Provider store = {store}>
+      <Rourer>
+        <App />
+      </Rourer>
+    </Provider>
   </>
 );
-
 

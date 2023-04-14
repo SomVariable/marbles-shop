@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Button from "../../UI/Button/Button"
+import Hheader from "../../UI/Hheader/Hheader"
 import CustomIcon from "../../UI/Icon/Icon"
 import Input from "../../UI/Input/Input"
 import styles from "./Example.module.scss"
@@ -26,6 +27,16 @@ const ExampleComponent = ({}: ExampleProps) => {
     <div className={styles.testSearch}>
     <Input value={numn} setValue = {inputHandler} placeholder = {"Ваш номер телефона"} isSearch = {true}/>
     </div>
+    <Hheader type = "h1">Распродажа в честь Нового года!</Hheader>
+    <Hheader type = "h2">Популярные категории</Hheader>
+    <Hheader type = "h2">Лидеры продаж</Hheader>
+    <Hheader type = "h2">Акции</Hheader>
+    <Hheader type = "h2">Наши работы</Hheader>
+    <Hheader type = "h3">Контакты</Hheader>
+    <Hheader type = "h3">Адрес</Hheader>
+
+    <Hheader type = "h4">Баблобоксы</Hheader>
+    <Hheader type = "h4">Фонтаны с цифрами</Hheader>
 
     <div className={styles.testInput}>
 

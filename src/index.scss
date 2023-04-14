@@ -21,7 +21,6 @@ code {
 
 a {
 	text-decoration: none;
-
 	color: inherit;
 }
 
@@ -54,11 +53,11 @@ a {
   
   /* font-family */
 
-  --black: #000000;
-  --accent: #F188F2;
-  --accent-light: #FFEDFF;
-  --accent-bold: #C949CA;
-  --secondary: #FFFFFF;
+	--black: #000000;
+	--accent: #F188F2;
+	--accent-light: #FFEDFF;
+	--accent-bold: #C949CA;
+	--secondary: #FFFFFF;
 
   /* pink */
 	--color-pink-50: #FEF4FE;
@@ -74,3 +73,17 @@ a {
 	
 	--color-grey: #A9A9A9;
 }
+
+p, h1, h2, h3, h4, h5, h6{
+	font-family: var(--ff-noto-sans);
+    font-style: normal;
+    line-height: 36px;
+    letter-spacing: 0.03em;
+}
+
+.no-select {
+	-webkit-user-select: none; 
+	-moz-user-select: none; 
+	-ms-user-select: none; 
+	user-select: none; 
+  }
