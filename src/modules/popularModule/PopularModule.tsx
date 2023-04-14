@@ -1,7 +1,9 @@
+import Hheader from '../../UI/Hheader/Hheader';
 import styles from './PopularModule.module.scss';
 import PopularCard from '../../components/popularCard/PopularCard';
 import heart from './heart.png';
 import buble from './for320card.png';
+
 
 const PopularModule = () => {
   const categoryArr = [
@@ -14,11 +16,12 @@ const PopularModule = () => {
     {src: heart, path: '#', content: 'Фольгированые шары', id: 7 },
     {src: heart, path: '#', content: '3D Сферы, Bubble', id: 8 },
   ]
+
   return(
     <section className={styles.popular}>
       <div className={styles.container}>
         <div className={styles.titleBlock}>
-          <h2 className={styles.popularTitle}>Популярные категории</h2>
+          <Hheader type='h2' className={styles.popularTitle}>Популярные категории</Hheader>
           <a href="#" className={styles.titleLink}>
             смотреть всё
             <svg width="7" height="11" viewBox="0 0 7 11" fill="none" xmlns="http://www.w3.org/2000/svg">

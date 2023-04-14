@@ -5,9 +5,8 @@ import { IAppProps } from './IApp.interfase';
 
 function App({...props}: IAppProps): JSX.Element {
   return <div className = {styles.app}> 
-  {/* <ExampleModule /> */}
-    <Router />
-    </div>;
+          <Router />
+         </div>;
 
 }
 

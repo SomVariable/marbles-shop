@@ -1,3 +1,4 @@
+import Hheader from '../../UI/Hheader/Hheader';
 import styles from './StockModule.module.scss';
 import MainCard from '../../components/mainCard/MainCard';
 import picture from './hokpicture.png';
@@ -13,7 +14,7 @@ const StockModule = () => {
     <section className={styles.stock}>
       <div className={styles.container}>
         <div className={styles.titleBlock}>
-            <h2 className={styles.stockTitle}>Акции</h2>
+            <Hheader type='h2' className={styles.stockTitle}>Акции</Hheader>
             <a href="#" className={styles.titleLink}>
               смотреть всё
               <svg width="7" height="11" viewBox="0 0 7 11" fill="none" xmlns="http://www.w3.org/2000/svg">

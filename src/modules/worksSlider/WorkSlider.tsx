@@ -1,4 +1,5 @@
 
+import Hheader from '../../UI/Hheader/Hheader';
 import './WorkSlider.scss';
 import img1 from './img1.png';
 import img2 from './img2.png';
@@ -24,9 +25,9 @@ const WorkSlider = () => {
   return (
     <section className='slider'>
       <div className="container">
-        <h3 className="works">
+        <Hheader type='h2' className="works">
         Наши работы
-        </h3>
+        </Hheader>
           <Swiper className='swiper-container'
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             navigation

@@ -1,3 +1,4 @@
+import Hheader from '../../UI/Hheader/Hheader';
 import styles from './Footer.module.scss';
 import Icon from '../../UI/Icon/Icon';
 
@@ -7,7 +8,7 @@ const Footer = () => {
       <div className={styles.container}>
         <div className={styles.wrapper}>
           <div className={styles.contactsBlock}>
-            <h2 className={styles.contacts}>Контакты</h2>
+            <Hheader type='h2' className={styles.contacts}>Контакты</Hheader>
             <a className={styles.tel} href="tel:65465675678">+6 546 567 56 78</a>
              <div className={styles.socialBlock}>
                <div className={styles.insta}>
@@ -22,7 +23,7 @@ const Footer = () => {
           </div>
 
           <div className={styles.addresBlock}>
-            <h2 className={styles.addres}>Адрес</h2>
+            <Hheader type='h2' className={styles.addres}>Адрес</Hheader>
             <address className={styles.addresStreet}>
               Заветный <br /> пр. Лазурный, д.11
             </address>

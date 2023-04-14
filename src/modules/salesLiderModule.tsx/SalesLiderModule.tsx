@@ -1,3 +1,4 @@
+import Hheader from '../../UI/Hheader/Hheader';
 import styles from './SalesLiderModule.module.scss';
 import MainCard from '../../components/mainCard/MainCard';
 import picture from './hokpicture.png';
@@ -9,11 +10,12 @@ const SalesLiderModule = () => {
     {src: picture, price: 1450, oldPrice: 1850, discount: 7, content:'Композиция шаров на день рождения', id: 3},
     {src: picture, price: 1450, oldPrice: 1850, discount: 7, content:'Композиция шаров на день рождения', id: 4},
   ]
+
   return (
     <section className={styles.saleLider}>
       <div className={styles.container}>
         <div className={styles.titleBlock}>
-            <h2 className={styles.liderTitle}>Лидеры продаж</h2>
+            <Hheader type='h2' className={styles.liderTitle}>Лидеры продаж</Hheader>
             <a href="#" className={styles.titleLink}>
               смотреть всё
               <svg width="7" height="11" viewBox="0 0 7 11" fill="none" xmlns="http://www.w3.org/2000/svg">

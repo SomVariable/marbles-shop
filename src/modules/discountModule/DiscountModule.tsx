@@ -1,3 +1,4 @@
+import Hheader from '../../UI/Hheader/Hheader';
 import styles from './DiscountModule.module.scss';
 import Input from '../../UI/Input/Input';
 import Button from '../../UI/Button/Button';
@@ -15,12 +16,12 @@ const DiscountModule = () => {
     <section className={styles.discount}>
       <div className={styles.container}>
         <div className={styles.content}>
-          <h2 className={styles.discountTitle}>
+          <Hheader type='h2' className={styles.discountTitle}>
             Скидка 5% 
-          </h2>
-          <h3 className={styles.discountSub}>
+          </Hheader>
+          <Hheader type='h3' className={styles.discountSub}>
           на первый заказ
-          </h3>
+          </Hheader>
           <form className={styles.discountForm}>
             <Input value ={value} setValue = {onValue} isSearch = {false} placeholder ={'+380'}/>
             <Button appearance = {'primary'} isOption = {false} children = {'Получить скидку'}/>

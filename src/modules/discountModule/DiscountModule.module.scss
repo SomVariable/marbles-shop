@@ -60,6 +60,9 @@
   @include lineSpacing(120%,0.03em );
   color: var(--secondary);
  }
+ p {
+  line-height: normal;
+ }
 }
 .img {
   display: none;

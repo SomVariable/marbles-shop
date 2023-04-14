@@ -1,47 +1,25 @@
 import styles from "./styles/HomePage.module.scss"
-import { addProduct } from "../../modules/CartList";
-import Button from "../../UI/Button/Button";
-import { useAppDispatch } from "../../store/store";
-import { Link } from "react-router-dom";
-interface IHomePageProps {
+import HeaderModule from "../../modules/headerModule/HeaderModule";
+import SaleModule from "../../modules/saleModule/SaleModule";
+import PopularModule from "../../modules/popularModule/PopularModule";
+import SalesLiderModule from "../../modules/salesLiderModule.tsx/SalesLiderModule";
+import DiscountModule from "../../modules/discountModule/DiscountModule"; 
+import StockModule from "../../modules/stockModule/StockModule";
+import WorkSlider from "../../modules/worksSlider/WorkSlider";
+import Footer from "../../modules/footer/Footer";
 
+const HomePage = () => {
+  return(
+    <>
+    <HeaderModule/>
+    <SaleModule/>
+    <PopularModule/>
+    <SalesLiderModule/>
+    <DiscountModule/>
+    <StockModule/>
+    <WorkSlider/>
+    <Footer/>
+    </>
+  )
 }
-type cartItem = {
-  type: string,
-  categoryes: [string],
-  price: number,
-  discount:number,
-  composition: string,
-  shape: string,
-  description: string,
-  count: number
-}
-
-const item: cartItem = {
-  type: "Композиция шаров на день рождения",
-  categoryes: ["som"],
-  price: 2500,
-  discount: 2700,
-  composition: "asda",
-  shape: "asda",
-  description: "asda",
-  count: 1
-}
-
-
-const HomePage = ({ }: IHomePageProps) => {
-  const dispatch = useAppDispatch()
-
-  const _addProduct = () => {
-    dispatch(addProduct(item))
-  }
-
-
-  return <div>
-      HomePage
-      <Link to = "/cart">cart</Link>
-      <Button appearance="primary" onClick={_addProduct}>add product</Button>
-    </div>
-}
-
-export default HomePage
+export default HomePage;
