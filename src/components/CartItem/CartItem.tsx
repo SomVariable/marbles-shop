@@ -7,13 +7,13 @@ import CustomText from "../../UI/CustomText/CustomText"
 
 import styles from "./styles/CartItem.module.scss"
 import Cross from "../../UI/Cross/Cross"
-import { cartItem } from "../../modules/CartList/types/CartTypes"
+import { stateCartItem } from "../../modules/CartList/types/CartTypes"
 import { useAppDispatch } from "../../store/store"
 import { decProductCount, incProductCount, deleteProduct } from "../../modules/CartList/reducers/CartListSliice"
 
 
 interface ICartItemProps extends Pick<React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement>, "className" | "key">{
-  cartInfo: cartItem
+  cartInfo: stateCartItem
 }
 const CartItem = ({cartInfo, className }: ICartItemProps) => {
   const {type, categoryes, price, discount, composition, shape, description, count} = cartInfo

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { CartListState, addProductAction, cartItem } from "../types/CartTypes";
+import { CartListState, addProductAction, cartItem, stateCartItem } from "../types/CartTypes";
 
 
 
@@ -9,13 +9,17 @@ const initialState : CartListState = {
     totalCount: 0,
 }
 
+const generateStateCaerItem = (product: cartItem) : stateCartItem=> {
+    return {...product, count: 1}
+}
+
 const addProductToCart = (state:  CartListState, p: cartItem | string) => {
     let product
     if(typeof p === "object"){
         product = state.products.find(product => product.type === p.type)
 
         if(!product){
-            state.products.push(p)
+            state.products.push(generateStateCaerItem(p))
             return null
         }
     }
@@ -26,6 +30,8 @@ const addProductToCart = (state:  CartListState, p: cartItem | string) => {
     if(product)  product.count += 1
     
 }
+
+
 
 const incTotalValue = (state:  CartListState, index: number) => {
     state.totalPrice += state.products[index].price
@@ -64,9 +70,6 @@ const cartListSlice = createSlice({
             }else{
                 state.products[productIndex].count -= 1
             }
-
-            
-            
         }
     },
     initialState

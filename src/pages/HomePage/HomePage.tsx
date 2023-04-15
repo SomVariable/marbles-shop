@@ -3,19 +3,11 @@ import { addProduct } from "../../modules/CartList";
 import Button from "../../UI/Button/Button";
 import { useAppDispatch } from "../../store/store";
 import { Link } from "react-router-dom";
+import { cartItem } from "../../modules/CartList/types/CartTypes";
 interface IHomePageProps {
 
 }
-type cartItem = {
-  type: string,
-  categoryes: [string],
-  price: number,
-  discount:number,
-  composition: string,
-  shape: string,
-  description: string,
-  count: number
-}
+
 
 const item: cartItem = {
   type: "Композиция шаров на день рождения",
@@ -24,23 +16,48 @@ const item: cartItem = {
   discount: 2700,
   composition: "asda",
   shape: "asda",
-  description: "asda",
-  count: 1
+  description: "asda"
+}
+const item2: cartItem = {
+  type: "что-то другое",
+  categoryes: ["som"],
+  price: 53,
+  discount: 2700,
+  composition: "asda",
+  shape: "asda",
+  description: "asda"
+}
+const item3: cartItem = {
+  type: "что-то третье",
+  categoryes: ["som"],
+  price: 1,
+  discount: 2700,
+  composition: "asda",
+  shape: "asda",
+  description: "asda"
 }
 
 
 const HomePage = ({ }: IHomePageProps) => {
   const dispatch = useAppDispatch()
 
-  const _addProduct = () => {
+  const _addProduct1 = () => {
     dispatch(addProduct(item))
+  }
+  const _addProduct2 = () => {
+    dispatch(addProduct(item2))
+  }
+  const _addProduct3 = () => {
+    dispatch(addProduct(item3))
   }
 
 
   return <div>
       HomePage
       <Link to = "/cart">cart</Link>
-      <Button appearance="primary" onClick={_addProduct}>add product</Button>
+      <Button appearance="primary" onClick={_addProduct1}>add product1</Button>
+      <Button appearance="primary" onClick={_addProduct2}>add product2</Button>
+      <Button appearance="primary" onClick={_addProduct3}>add product3</Button>
     </div>
 }
 

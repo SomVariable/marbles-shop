@@ -3,10 +3,10 @@
     grid-template-rows: 167px auto auto auto;
     grid-template-columns: auto 95px 95px auto;
     grid-template-areas: 
-    ". i i ."
-    "h h h h"
-    "p p d d"
-    ". c c ."    ;
+    ". image image ."
+    "header header header header"
+    "price price discount discount"
+    ". counter counter ."    ;
     position: relative;
     gap: 20px 0;
     padding: 15px 10px;
@@ -24,15 +24,15 @@
 
     @media screen and (min-width: 1280px){
         grid-template-rows: 83px 83px;
-        grid-template-columns: 190px auto auto auto;
+        grid-template-columns: 190px 1fr auto auto;
         grid-template-areas: 
-        "i h p d"
-        "i c p d";
+        "image header price discount"
+        "image counter price discount";
     }
 }
 
 .image{
-    grid-area: i;
+    grid-area: image;
     @media screen and (min-width: 1280px){
         justify-self: center;
         align-self: center;
@@ -40,19 +40,22 @@
 }
 
 .header {
-    grid-area: h;
+    grid-area: header;
+    justify-self: start;
+    align-self: flex-start;
     @media screen and (min-width: 1280px){
-        justify-self: center;
-        align-self: center;
+        margin-left: 30px;
     }
 }
 
 .counter{
-    grid-area: c;
-    justify-self: center;
+    grid-area: counter;
+    justify-self: start;
+    align-self: flex-start;
+    margin-left: 30px;
 }
 .price{
-    grid-area: p;
+    grid-area: price;
 
     @media screen and (min-width: 600px){
         
@@ -60,16 +63,18 @@
     @media screen and (min-width: 1280px){
         justify-self: center;
         align-self: center;
+        margin-left: 60px;
     }
 }
 
 .discount{
-    grid-area: d;
+    grid-area: discount;
     justify-self: flex-end;
     
     @media screen and (min-width: 1280px){
         justify-self: center;
         align-self: center;
+        margin-left: 40px;
     }
 }
 
