@@ -2,33 +2,21 @@ import React from 'react'
 import Spinner from '../../UI/Spinner/Spinner';
 import Error from '../../UI/Error/Error';
 import MessageEmptyData from '../../UI/MessageEmptyData/MessageEmptyData';
-
-type simpleProcess = "waiting" | "confirmed" | "isHasData" | "error"
-
-interface IStateMachineProps{
-    process: simpleProcess
-    Component: () => JSX.Element,
-    data?: any,
-    waiting?: () => JSX.Element,
-    confirmed?: () => JSX.Element,
-    emptyData?: () => JSX.Element,
-    error?: () => JSX.Element,
-}
+import { IStateMachineProps, IStateMachineWithServerRequestProps } from './interface/ComponentStateMachine.interface';
 
 
-function ComponentStateMachine({process, Component, data, waiting, confirmed, emptyData, error} : IStateMachineProps) {
+export function ComponentStateMachine({process, data, waiting, confirmed, emptyData, error} : IStateMachineProps) {
     const waitingFn   = waiting? waiting : () => <Spinner />,
-          confirmedFn = confirmed? confirmed : () => <Component {...data}/>,
+          confirmedFn = confirmed,
           emptyDataFn = emptyData? emptyData: () => <MessageEmptyData />,
           errorFn     = error? error : () => <Error />;
-
 
     switch(process){
     case "waiting": 
         return waitingFn()
     case "confirmed":
-        return confirmedFn()
-    case "isHasData": 
+        return <>{confirmedFn()}</>
+    case "noData": 
         return emptyDataFn()
     case "error":
         return errorFn()
@@ -37,4 +25,13 @@ function ComponentStateMachine({process, Component, data, waiting, confirmed, em
     }
 }
 
-export default ComponentStateMachine
+export function ComponentStateMachineWithServerRequest({process, data, waiting, confirmed, fetching, emptyData, error} : IStateMachineWithServerRequestProps){
+    const waitingFn  = fetching? fetching : () => <Spinner />
+
+    if(process === "fetching"){
+        return waitingFn()
+    }else{
+        ComponentStateMachine({process, data, waiting, confirmed, emptyData, error})
+    }
+}
+

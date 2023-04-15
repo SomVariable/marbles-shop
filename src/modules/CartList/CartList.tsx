@@ -2,48 +2,62 @@ import CartItem from "../../components/CartItem/CartItem"
 import cn from "classnames"
 import styles from "./styles/CartList.module.scss"
 import { useAppSelector } from "../../store/store"
-import { useState } from "react"
-interface ICartListProps extends Pick<React.DetailedHTMLProps<React.HTMLAttributes<HTMLUListElement>, HTMLUListElement>, "className">{
-  
+import { useState, useEffect } from "react"
+import { ComponentStateMachine } from "../../components/ComponentStateMachine/ComponentStateMachine"
+import defineProcess from "../../components/ComponentStateMachine/utils/defineProcess"
+import { procesesType } from "../../components/ComponentStateMachine/types/ComponentStateMachineTypes"
+interface ICartListProps extends Pick<React.DetailedHTMLProps<React.HTMLAttributes<HTMLUListElement>, HTMLUListElement>, "className"> {
+
 }
 
-type processType = {
-  waiting  : boolean,
-  confirmed: boolean,
-  error    : boolean
-}
-
-const CartList = ({className}: ICartListProps) => {
+const CartList = ({ className }: ICartListProps) => {
   const products = useAppSelector((state) => state.cartListReducer.products)
   const productList = products.map(product => {
-    return <CartItem key = {product.type} className = {styles.item} cartInfo = {product}/>
+    return <CartItem key={product.type} className={styles.item} cartInfo={product} />
   })
 
-  // const [processes, setProcesses] = useState({
-  //     waiting  : false,
-  //     confirmed: false,
-  //     error    : false
-  //   });
+  const [processes, setProcesses] = useState<procesesType>({
+    waiting: false,
+    confirmed: false,
+    noData: false,
+    error: false
+  });
 
-  //   // Interface for process changing. There culd be only one condition 
-  //   const changeProcess = () => {
-  //   const newState: processType = {
-  //       waiting   : false,
-  //       confirmed : false,
-  //       error     : false
-  //   }
+  const changeProcess = (newProcess: "waiting" | "confirmed" | "noData" | "error") => {
+    const newState: procesesType = {
+      waiting: false,
+      confirmed: false,
+      noData: false,
+      error: false
+    }
 
-  //   for(let process in newState){
-  //       if(process === newProcess){
-  //         newState[process] = true
-  //       break
-  //       }
-  //   }
-  //   setProcesses(newState)
-  //   }
-  
-  return <ul className = {cn(styles.list, className)}>
-    {productList.length > 0? productList: "empty"}
+    for (let process in newState) {
+      if (process === newProcess) {
+        newState[process] = true
+        break
+      }
+    }
+    setProcesses(newState)
+  }
+
+  useEffect(() => {
+    changeProcess("noData")
+  }, [])
+
+  useEffect(() => {
+
+    if (!products) {
+      changeProcess("error")
+    } else if (products.length === 0) {
+      changeProcess("noData")
+    } else if (products.length > 0) {
+      changeProcess("confirmed")
+    }
+
+  }, [products])
+
+  return <ul className={cn(styles.list, className)}>
+    <ComponentStateMachine process={defineProcess(processes)} confirmed={() => productList} />
   </ul>
 }
 export default CartList
