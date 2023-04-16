@@ -55,18 +55,18 @@ const Header = () => {
 
   return (
     <div className={styles.headerContent}>    
-      <a className={styles.logo} href="#">
+      <Link className={styles.logo} to={'/'}>
         <picture>
           <source src='#'/>
           <img src={logo} alt="You will see logo" width = '86.02px' height = '43.49px'/>
         </picture>
-      </a>
+      </Link>
       <div className={styles.burger}>
         <Button onClick = {asideShow} isOption = {true} appearance = {'option'}/>
       </div>
-      <div className={styles.catalog}>
+      <Link to={'/catalog'} className={styles.catalog}>
         <Button isOption = {true} appearance = {'option'} children = {'Каталог'}/>
-      </div>    
+      </Link>    
         <Input className={styles.inputSize} isSearch = {true} placeholder = {'Поиск'} value = {value} setValue = {onChange}/>
       <div className={cn(styles.menu, {[styles.activeMenu]: asidePanel === true})}>
         <div className={cn(styles.menuBlock, {[styles.menuBlockActive]: asidePanel === true})}>

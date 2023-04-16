@@ -2,6 +2,7 @@ import styles from './SubHeader.module.scss';
 import Icon from '../../UI/Icon/Icon';
 import logo from './logo.png';
 import cn from 'classnames';
+import {Link} from 'react-router-dom';
 
 const SubHeader = () => {
 
@@ -15,12 +16,12 @@ const SubHeader = () => {
 
   return (
     <div className={styles.subHeader}>
-      <a className={styles.logo} href="#">
+      <Link className={styles.logo} to={'/'}>
         <picture>
           <source src='#'/>
           <img src={logo} alt="You will see logo" width = '86.02px' height = '43.49px'/>
         </picture>
-      </a>
+      </Link>
       
       <nav className={styles.nav}>      
         {
