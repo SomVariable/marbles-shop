@@ -21,9 +21,9 @@ const CartReceipt = ({className}: ICartReceiptProps) => {
 
   return ( 
   <div className = {cn(styles.receipt, className)}>
-    <Hheader className = {styles.header} type="h4">Детали заказа</Hheader>
-    <CustomText className = {styles.count} type="medium">Колличество</CustomText>
-    <CustomText className = {styles.sum} type="medium">Сумма</CustomText>
+    <Hheader className = {styles.header} type="h3">Детали заказа</Hheader>
+    <CustomText className = {styles.count} type="small">Колличество</CustomText>
+    <CustomText className = {styles.sum} type="small">Сумма</CustomText>
     <CustomText className = {styles.countNumber} type="medium">{totalCount}</CustomText>
     <CustomText className = {styles.sumNumber} type="medium">{totalPrice}</CustomText>
     <Input className = {styles.phone} value = {phonNumber} setValue={updatePhoneNumber}/>

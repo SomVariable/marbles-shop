@@ -11,6 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
 }
 
 code {
@@ -29,7 +30,8 @@ a {
 	--fw-light: 300;
 	--fw-regular: 400;
 	--fw-medium: 500;
-	--fw-bold: 700;
+	--fw-bold: 600;
+	--fw-the-boldest: 700;
 
 	/* font-size */
 	--fs-xxs: 12px;

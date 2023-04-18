@@ -2,7 +2,7 @@
 
 .receipt{
     display: grid;
-    max-height: 393px;
+    max-height: 420px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr auto auto;
     grid-template-areas: 
@@ -17,8 +17,6 @@
 
     border: 2px solid #000000;
     border-radius: 21px;
-
-    
 }
 
 

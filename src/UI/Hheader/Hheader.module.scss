@@ -1,48 +1,41 @@
+@use  "/src/styles/abstraction/text.scss";
+
 h1, h2, h3, h4, h5, h6{
     margin: 0;
+    line-height: 130%;
+    letter-spacing: 0.03em;
+    
 }
 
 .h1{
+    @include text.text(28px, 700);
     font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 28px;
-    line-height: 130%;
     color: #000000;
 }
 
-.h2, h3{
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 130%;
-    letter-spacing: 0.03em;
+.h2{
+    @include text.text(18px, 700);
     color: #000000;
 }
 
-.h4{
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 130%;
-    letter-spacing: 0.03em;
+.h3{
+    @include text.text(16px);
     color: #000000;
 }
 
 
 @media (min-width: 800px) { 
     .h1{
-
         font-size: 80px;
     }
     
-    .h2, h3{
+    .h2{
         font-size: 40px;
     }
     
-    .h4{
-        font-size: 18px;
+    .h3{
+        font-size: 36px;
     }
  }
+
+

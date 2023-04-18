@@ -4,6 +4,7 @@ import Button from "../../UI/Button/Button";
 import { useAppDispatch } from "../../store/store";
 import { Link } from "react-router-dom";
 import { cartItem } from "../../modules/CartList/types/CartTypes";
+import Hheader from "../../UI/Hheader/Hheader";
 interface IHomePageProps {
 
 }
@@ -55,6 +56,11 @@ const HomePage = ({ }: IHomePageProps) => {
   return <div>
       HomePage
       <Link to = "/cart">cart</Link>
+      <div className="">
+        <Hheader type = "h1">Распродажа</Hheader>
+        <Hheader type = "h2">Популярные категории</Hheader>
+        <Hheader type = "h3">Композиция шаров на день рождения</Hheader>
+      </div>
       <Button appearance="primary" onClick={_addProduct1}>add product1</Button>
       <Button appearance="primary" onClick={_addProduct2}>add product2</Button>
       <Button appearance="primary" onClick={_addProduct3}>add product3</Button>

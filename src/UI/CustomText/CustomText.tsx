@@ -1,18 +1,22 @@
 import React from 'react'
-import styles from './CustomText.module.scss'
 import cn from 'classnames'
+import styles from './CustomText.module.scss'
 
 interface ITextProps extends Pick<React.DetailedHTMLProps<React.HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>, "className" | "children">{
-    type:  "small" | "medium" | "big" | "discount"
+    type:  "small" | "smallBold" | "medium" | "big" | "discount" | "link" | "linkBig" | "theSmallest"
 }
 
 function CustomText({type, children, className} : ITextProps) {
   return (
-    <p className = {cn(styles.text, className, {
-        [styles.smallText]: type === "small",
-        [styles.mediumText]: type === "medium",
-        [styles.bigText]: type === "big",
-        [styles.bigText]: type === "discount",
+    <p className = {cn(styles.customText, className, {
+        [styles.customTextSmall]: type === "small",
+        [styles.customTextMedium]: type === "medium",
+        [styles.customTextBig]: type === "big",
+        [styles.customTextDiscount]: type === "discount",
+        [styles.customTextLink]: type === "link",
+        [styles.customTextLinkBig]: type === "linkBig",
+        [styles.customTextSmallBold]: type === "smallBold",
+        [styles.customTextTheSmallest]: type === "theSmallest",
     })}>
         {children}
     </p>

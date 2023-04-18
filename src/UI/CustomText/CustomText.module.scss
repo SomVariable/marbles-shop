@@ -1,19 +1,163 @@
-@mixin text($font-size: 18px , $font-weight: 600) {
-    font-weight: $font-weight;
-    font-size: $font-size;
-}
+@use "/src/styles/abstraction/text.scss";
+@use "/src/styles/media-breackpoints/media-breackpoints.scss";
 
-.text{
+.customText{
+    @include text.text(var(--fs-s), var(--fw-medium)); // 16px 500
     padding: 0;
     margin: 0;
-}
-
-.smallText{
     
-}
-.mediumText{
 
-}
-.bigText{
+    @media #{media-breackpoints.$ui-tablet-min}{
+        //
+    }
 
+    @media #{media-breackpoints.$ui-desktop-min}{
+        font-size: 18px; 
+    }
+
+    @media #{media-breackpoints.$ui-desktop-lg-min}{
+        font-size: 20px; 
+    }
+}
+
+
+.customTextSmall{
+
+    @media #{media-breackpoints.$ui-tablet-min}{
+        
+    }
+
+    @media #{media-breackpoints.$ui-desktop-min}{
+        
+    }
+
+    @media #{media-breackpoints.$ui-desktop-lg-min}{
+        
+    }
+}
+.customTextSmallBold{
+    @include text.text(16px 600); 
+
+    @media #{media-breackpoints.$ui-tablet-min}{
+        
+    }
+
+    @media #{media-breackpoints.$ui-desktop-min}{
+        
+    }
+
+    @media #{media-breackpoints.$ui-desktop-lg-min}{
+    }
+}
+
+.customTextTheSmallest{
+    @include text.text(14px, 500);
+
+    @media #{media-breackpoints.$ui-tablet-min}{
+        
+    }
+
+    @media #{media-breackpoints.$ui-desktop-min}{
+    }
+
+    @media #{media-breackpoints.$ui-desktop-lg-min}{
+        font-size: 18px;
+    }
+}
+
+// .theBiggest{
+//     @include text.text(28px, 500);
+
+//     @media #{media-breackpoints.$ui-tablet-min}{
+        
+//     }
+
+//     @media #{media-breackpoints.$ui-desktop-min}{
+        
+//     }
+
+//     @media #{media-breackpoints.$ui-desktop-lg-min}{
+//         font-size: 80px;
+//     }
+// }
+
+.customTextDiscount{
+    @include text.text(14px, 500);
+    color: #8B8B8B;
+    text-decoration: line-through;
+
+    @media #{media-breackpoints.$ui-tablet-min}{
+        font-size: 16px;
+    }
+
+    @media #{media-breackpoints.$ui-desktop-min}{
+        font-size: 18px;
+    }
+
+    @media #{media-breackpoints.$ui-desktop-lg-min}{
+        font-size: 20px;
+    }
+}
+
+.customTextMedium{
+    @include text.text(27px, 600);
+
+    @media #{media-breackpoints.$ui-tablet-min}{
+        font-size: 30px;
+    }
+
+    @media #{media-breackpoints.$ui-desktop-min}{
+        font-size: 36px;
+    }
+
+    @media #{media-breackpoints.$ui-desktop-lg-min}{
+        font-size: 40px;
+    }
+}
+
+.customTextBig{
+    @include text.text(31px, 600);
+
+    @media #{media-breackpoints.$ui-tablet-min}{
+        font-size: 34px;
+    }
+
+    @media #{media-breackpoints.$ui-desktop-min}{
+        font-size: 36px;
+    }
+
+    @media #{media-breackpoints.$ui-desktop-lg-min}{
+        font-size: 38px;
+    }
+}
+
+.customTextLink{
+    @include text.text(12px, 500);
+
+    @media #{media-breackpoints.$ui-tablet-min}{
+    }
+
+    @media #{media-breackpoints.$ui-desktop-min}{
+        font-size: 14px;
+    }
+
+    @media #{media-breackpoints.$ui-desktop-lg-min}{
+        font-size: 16px;
+    }
+}
+
+.customTextLinkBig{
+    @include text.text(14px, 500);
+
+    @media #{media-breackpoints.$ui-tablet-min}{
+        
+    }
+
+    @media #{media-breackpoints.$ui-desktop-min}{
+        font-size: 16px;
+    }
+
+    @media #{media-breackpoints.$ui-desktop-lg-min}{
+        font-size: 18px;
+    }
 }
