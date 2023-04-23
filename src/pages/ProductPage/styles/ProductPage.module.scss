@@ -1,0 +1,90 @@
+@use "/src/styles/media-breackpoints/media-breackpoints.scss";
+
+
+.productPage{
+    display: grid;
+    grid-template-columns: 1fr ;
+    grid-template-rows: 1fr repeat(4, auto) ;
+    grid-template-areas: 
+    "header"
+    "img"
+    "price "
+    "button"
+    "info";
+    gap: 20px;
+
+
+    @media #{media-breackpoints.$ui-tablet-min}{
+        
+    }
+
+    @media #{media-breackpoints.$ui-desktop-min}{
+        
+    }
+
+    @media #{media-breackpoints.$ui-desktop-lg-min}{
+        grid-template-columns: 830px 390px auto ;
+        grid-template-rows: 1fr repeat(4, auto) ;
+        grid-template-areas: 
+        "header header header"
+        "img price price"
+        "img button ."
+        "img info ."
+        "img . .";
+        padding-right: 90px;
+        gap: 70px;
+        padding-right: 90px;
+    }
+}
+
+
+
+.productHeader{
+    grid-area: header;
+}
+.productaImage{
+    grid-area: img;
+    height: 172px;
+    width: 216px;
+    justify-self: center;
+
+    @media #{media-breackpoints.$ui-tablet-min}{
+        
+    }
+
+    @media #{media-breackpoints.$ui-desktop-min}{
+        
+    }
+
+    @media #{media-breackpoints.$ui-desktop-lg-min}{
+        height: 717px;
+        width: 830px;
+    }
+}
+.productPriceBlock{
+    grid-area: price;
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+
+    @media #{media-breackpoints.$ui-tablet-min}{
+        
+    }
+
+    @media #{media-breackpoints.$ui-desktop-min}{
+        
+    }
+
+    @media #{media-breackpoints.$ui-desktop-lg-min}{
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+}
+.price{
+}
+.discount{
+}
+
+.productInformatin{
+    grid-area: info;
+}

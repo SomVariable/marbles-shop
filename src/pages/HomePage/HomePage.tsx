@@ -2,7 +2,7 @@ import styles from "./styles/HomePage.module.scss"
 import { addProduct } from "../../modules/CartList";
 import Button from "../../UI/Button/Button";
 import { useAppDispatch } from "../../store/store";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { cartItem } from "../../modules/CartList/types/CartTypes";
 import Hheader from "../../UI/Hheader/Hheader";
 interface IHomePageProps {
@@ -41,6 +41,7 @@ const item3: cartItem = {
 
 const HomePage = ({ }: IHomePageProps) => {
   const dispatch = useAppDispatch()
+  const navigate = useNavigate();
 
   const _addProduct1 = () => {
     dispatch(addProduct(item))
@@ -52,6 +53,9 @@ const HomePage = ({ }: IHomePageProps) => {
     dispatch(addProduct(item3))
   }
 
+  function handleClick() {
+    navigate('/product', { state: { product: item } });
+  }
 
   return <div>
       HomePage
@@ -64,6 +68,7 @@ const HomePage = ({ }: IHomePageProps) => {
       <Button appearance="primary" onClick={_addProduct1}>add product1</Button>
       <Button appearance="primary" onClick={_addProduct2}>add product2</Button>
       <Button appearance="primary" onClick={_addProduct3}>add product3</Button>
+      <Button appearance="primary" onClick={handleClick}>choose product</Button>
     </div>
 }
 
